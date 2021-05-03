@@ -1,0 +1,128 @@
+.product-details {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.product-details, .product-details section, .product-details img {
+    border-radius: 5px;
+}
+
+.images {
+    max-width: 50%;
+    -ms-flex: auto;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#img-main {
+}
+
+.secondary-images {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+}
+
+.img-scn {
+    width: 120px;
+    max-height: 120px;
+    margin-right: 10px;
+}
+
+.details {
+    flex-basis: calc(50% - 30px);
+    margin-left: 30px;
+}
+
+.details h1, .details h2 {
+    padding: 0;
+}
+
+.details h1 {
+    margin-bottom: 20px;
+}
+
+.details h2 {
+    font-size: 26px;
+}
+
+.old-price {
+    text-decoration: line-through #D21117;
+}
+
+.new-price {
+    color: #ED1C24;
+}
+
+.currency {
+    font-weight: 400;
+}
+
+.btn-fav {
+    margin-top: 30px;
+
+    padding: 10px;
+    font-size: 20px;
+
+    border-radius: 5px;
+    border: 2px solid #D21117;
+    background-color: #D21117;
+    color: white;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+button i {
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #ED1C24;
+}
+
+.description {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-right: 5px;
+    justify-self: center;
+    word-wrap: anywhere;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    flex-grow: 1;
+    text-align: justify;
+
+    font-size: 20px;
+}
+
+.suggestions {
+
+}
+
+@media screen and (max-width: 800px) {
+    .images {
+        max-width: 100%;
+    }
+
+    .details {
+        flex-basis: 100%;
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    .details h1, .details h2 {
+        text-align: center;
+    }
+
+    button {
+        width: 100%;
+    }
+}
