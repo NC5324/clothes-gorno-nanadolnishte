@@ -79,7 +79,7 @@
 }
 
 .nav-link:visited {
-    color: initial;
+    color: black;
 }
 
 .nav-link:hover {
@@ -142,6 +142,10 @@ h2 {
 .footer-nav-link {
     text-decoration: none;
     cursor: pointer;
+}
+
+.footer-nav-link:visited {
+    color: darkslategray;
 }
 
 .footer-nav-link:hover {
