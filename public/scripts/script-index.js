@@ -38,8 +38,10 @@ function adjustSlideshow(index) {
     for(let i=0; i<3; i++) {
         if(i === index) {
             dots[i].setAttribute('class', 'far fa-circle i-dot')
+            $(dots[i]).css('font-size', '12px')
         } else {
             dots[i].setAttribute('class', 'fas fa-circle i-dot')
+            $(dots[i]).css('font-size', '8px')
         }
     }
     const slideshow = $('.slideshow')
@@ -95,7 +97,10 @@ $(document).ready(() => {
         const item = document.querySelector('#template-collection-item').content.cloneNode(true)
         item.querySelector('img').setAttribute('src', x.thumbnail)
         item.querySelector('h2').textContent = x.title
-        console.log(item.querySelector('.collections-item'))
         document.querySelector('.collections-content').appendChild(item)
+    })
+
+    $('.collections-item').on('click', () => {
+        window.location.href = './public/browse.html'
     })
 })

@@ -1,0 +1,143 @@
+.filters {
+    display: flex;
+}
+
+.filters h1 {
+    flex: 1 1 auto;
+}
+
+.filters label {
+    margin: auto 10px auto 10px;
+}
+
+.filters label[for="filter-category"] {
+    margin-left: auto;
+}
+
+.filters select {
+    margin: auto 10px auto 0;
+
+    outline: none;
+    border: 2px solid #8D8D8D;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.browse {
+    flex: 1 0 auto;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.browse-item {
+    flex-basis: 25%;
+    -ms-flex: auto;
+    position: relative;
+    padding: 10px;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.browse-item > img {
+    width: 100%;
+    height: calc(100% - 50px);
+    border-radius: 2px;
+}
+
+.browse h2 {
+    padding: 0;
+    text-align: left;
+    height: 50px;
+}
+
+.browse-item::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+}
+
+.browse-item:hover::before {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.price {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.price .currency {
+    font-weight: 400;
+}
+
+.old-price, .new-price {
+    padding: 0 5px 0 0;
+    font-size: 16px;
+}
+
+.old-price {
+    text-decoration: line-through #D21117;
+    text-decoration-thickness: 2px;
+}
+
+.promotion {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0; right: 0;
+    display: flex;
+    border-radius: 50%;
+    background-color: #D21117;
+}
+
+.promotion span {
+    color: white;
+    margin: auto;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 1000px) {
+    .browse-item {
+        flex-basis: 33%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .filters {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .filters h1 {
+        margin: auto;
+    }
+
+    .filters label, .filters select {
+        margin: 10px auto 10px auto;
+    }
+
+    .filters select {
+        width: 100%;
+    }
+
+    .browse-item {
+        flex-basis: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .browse-item {
+        flex-basis: 100%;
+    }
+}
+
+
