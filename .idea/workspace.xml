@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="add product details page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="update link styling">
       <change beforePath="$PROJECT_DIR$/public/stylesheets/style-global.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style-global.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1620044970134</updated>
       <workItem from="1620044971340" duration="9000" />
-      <workItem from="1620044987536" duration="31075000" />
+      <workItem from="1620044987536" duration="31246000" />
     </task>
     <task id="LOCAL-00001" summary="update project structure">
       <created>1620061914666</created>
@@ -94,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620078781436</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update link styling">
+      <created>1620078885144</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1620078885145</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +110,7 @@
     <MESSAGE value="update project structure" />
     <MESSAGE value="add browsing page&#10;add product details page" />
     <MESSAGE value="add product details page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add product details page" />
+    <MESSAGE value="update link styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="update link styling" />
   </component>
 </project>
