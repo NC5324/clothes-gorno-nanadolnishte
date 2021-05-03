@@ -1,68 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-    font-family: "Roboto", "Helvetica", "Open Sans", "Arial", sans-serif;
-
-}
-.container {
-    max-width: 1280px;
-    margin-right: auto;
-    margin-left: auto;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.header {
-    min-height: 150px;
-
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-
-    padding: 0 10%;
-    margin-bottom: 30px;
-}
-
-.main-content {
-    display: flex;
-    flex-direction: column;
-
-    padding: 0 10%;
-}
-
-#brand {
-    max-width: 220px;
-    height: auto;
-
-    margin: 30px auto;
-}
-
-.nav {
-    margin-left: auto;
-    margin-right: auto;
-
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-}
-
-.nav-link {
-    font-weight: 500;
-    font-size: 18px;
-
-    padding: 7px 20px;
-    word-break: break-word;
-
-    cursor: pointer;
-}
-
-.nav-link:hover {
-    color: darkslategray;
-}
-
 .slideshow, .slideshow section {
     border-radius: 2px;
 }
@@ -95,20 +30,6 @@
 
 .slide-content > * {
     margin: auto;
-}
-
-h1, h2, h3 {
-    font-weight: 500;
-    padding: 7px 20px;
-
-    word-break: break-word;
-}
-
-h1 {
-    font-size: 30px;
-}
-h2 {
-    font-size: 20px;
 }
 
 .slide-content > h1 {
@@ -203,54 +124,6 @@ h2 {
     background: rgba(255, 255, 255, 0.1);
 }
 
-.footer {
-    margin: 0 10% 30px;
-    padding: 7px 20px;
-    border-top: 1px solid lightgray;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.footer > div {
-    display: flex;
-    flex-flow: row wrap;
-    margin-bottom: 30px;
-}
-
-.footer-section {
-    max-width: 300px;
-    flex: 1 1 auto;
-    margin-right: 30px;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-section h1 {
-    padding: 7px 0;
-    font-weight: 500;
-    font-size: 16px;
-}
-
-.footer-nav-link, .footer-text {
-    font-weight: 400;
-    padding: 3px 0;
-    font-size: 14px;
-    color: darkslategray;
-
-    word-break: break-word;
-}
-
-.footer-nav-link {
-    cursor: pointer;
-}
-
-.footer-nav-link:hover {
-    color: slategray;
-}
-
-
 @media screen and (max-width: 1000px) {
     .collections-item {
         flex-basis: 50%;
@@ -262,9 +135,3 @@ h2 {
         flex-basis: 100%;
     }
 }
-
-
-
-
-
-
