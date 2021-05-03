@@ -104,7 +104,88 @@ button:hover {
 }
 
 .suggestions {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    margin-bottom: 30px;
 
+    position: relative;
+    display: flex;
+}
+
+.browse-item {
+    flex-basis: 25%;
+    -ms-flex: auto;
+    position: relative;
+    padding: 10px;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.browse-item > img {
+    width: 100%;
+    height: calc(100% - 50px);
+    border-radius: 2px;
+}
+
+.browse-item h2 {
+    padding: 0;
+    text-align: left;
+    height: 50px;
+}
+
+.browse-item::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+}
+
+.browse-item:hover::before {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.item-price {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.item-price .currency {
+    font-weight: 400;
+}
+
+.item-old-price, .item-new-price {
+    padding: 0 5px 0 0;
+    font-size: 16px;
+}
+
+.item-old-price {
+    text-decoration: line-through #D21117;
+    text-decoration-thickness: 2px;
+}
+
+.promotion {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0; right: 0;
+    display: flex;
+    border-radius: 50%;
+    background-color: #D21117;
+}
+
+.promotion span {
+    color: white;
+    margin: auto;
+    font-size: 16px;
 }
 
 @media screen and (max-width: 800px) {
