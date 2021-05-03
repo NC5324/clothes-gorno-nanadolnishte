@@ -21,6 +21,8 @@
 }
 
 #img-main {
+    object-position:  center 100%;
+    object-fit: cover;
 }
 
 .secondary-images {
@@ -31,6 +33,9 @@
 }
 
 .img-scn {
+    object-position:  center 100%;
+    object-fit: cover;
+
     width: 120px;
     max-height: 120px;
     margin-right: 10px;
