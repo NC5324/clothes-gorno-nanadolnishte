@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Roboto", "Helvetica", "Open Sans", "Arial", sans-serif;
+
+}
+.container {
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    min-height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    padding: 0 10%;
+    margin-bottom: 30px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 10%;
+}
+
+#brand {
+    max-width: 220px;
+    height: auto;
+
+    margin: 30px auto;
+}
+
+.nav {
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 18px;
+
+    padding: 7px 20px;
+    word-break: break-word;
+
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color: darkslategray;
+}
+
+.slideshow, .slideshow section {
+    border-radius: 2px;
+}
+
+.slideshow {
+    flex-basis: 450px;
+
+    background: url("../../assets/slide1.jpg") no-repeat center 100%;
+    background-size: cover;
+    transition: background 0.5s ease;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    margin-bottom: 30px;
+
+}
+
+.slide-content {
+    flex: 1 0 auto;
+    background: rgba(10, 10, 10, 0.3);
+    transition: background 0.5s ease-out;
+
+    display: flex;
+    flex-direction: column;
+
+    color: white;
+}
+
+.slide-content > * {
+    margin: auto;
+}
+
+h1, h2, h3 {
+    font-weight: 500;
+    padding: 7px 20px;
+
+    word-break: break-word;
+}
+
+h1 {
+    font-size: 30px;
+}
+h2 {
+    font-size: 20px;
+}
+
+.slide-content > h1 {
+    text-align: center;
+}
+
+.slideshow-footer {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    background: white;
+
+    display: flex;
+}
+
+.slideshow-controls {
+    margin: auto;
+    padding: 15px;
+
+    display: flex;
+}
+
+.slideshow-controls i {
+    color: darkslategray;
+    cursor: pointer;
+    margin: auto;
+}
+
+.slideshow-controls i:hover {
+    color: slategray;
+    cursor: pointer;
+}
+
+.slideshow-controls .i-lr {
+    font-size: 15px;
+    padding: 0 10px;
+}
+
+.slideshow-controls .i-dot {
+    font-size: 8px;
+    padding: 0 5px;
+}
+
+.collections {
+    padding: 5px 10px;
+
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.collections-content {
+    flex: 1 0 auto;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.collections-item {
+    flex-basis: 33%;
+    -ms-flex: auto;
+    width: 259px;
+    position: relative;
+    padding: 10px;
+
+    cursor: pointer;
+}
+
+.collections-item > img {
+    width: 100%;
+    height: calc(100% - 50px);
+    border-radius: 2px;
+}
+
+.collections h2 {
+    text-align: center;
+    height: 50px;
+}
+
+.collections-item::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.collections-item:hover::before {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.footer {
+    margin: 0 10% 30px;
+    padding: 7px 20px;
+    border-top: 1px solid lightgray;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.footer > div {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 30px;
+}
+
+.footer-section {
+    max-width: 300px;
+    flex: 1 1 auto;
+    margin-right: 30px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section h1 {
+    padding: 7px 0;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.footer-nav-link, .footer-text {
+    font-weight: 400;
+    padding: 3px 0;
+    font-size: 14px;
+    color: darkslategray;
+
+    word-break: break-word;
+}
+
+.footer-nav-link {
+    cursor: pointer;
+}
+
+.footer-nav-link:hover {
+    color: slategray;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .collections-item {
+        flex-basis: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .collections-item {
+        flex-basis: 100%;
+    }
+}
+
+
+
+
+
+
