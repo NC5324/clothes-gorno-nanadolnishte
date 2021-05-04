@@ -6,7 +6,10 @@
   "dependencies": {
     "express": "^4.17.1",
     "jquery": "^3.6.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.6.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

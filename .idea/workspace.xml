@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="fix text decoration for safari (and others maybe)">
-      <change afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style-details.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style-details.css" afterDir="false" />
-    </list>
+    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="install node.js &amp; express" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1620044970134</updated>
       <workItem from="1620044971340" duration="9000" />
-      <workItem from="1620044987536" duration="39228000" />
+      <workItem from="1620044987536" duration="39529000" />
     </task>
     <task id="LOCAL-00001" summary="update project structure">
       <created>1620061914666</created>
@@ -147,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620124719297</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="install node.js &amp; express">
+      <created>1620128047693</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1620128047693</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +161,7 @@
     <MESSAGE value="add suggestions section to product details page" />
     <MESSAGE value="update img styling on product details page" />
     <MESSAGE value="fix text decoration for safari (and others maybe)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix text decoration for safari (and others maybe)" />
+    <MESSAGE value="install node.js &amp; express" />
+    <option name="LAST_COMMIT_MESSAGE" value="install node.js &amp; express" />
   </component>
 </project>
