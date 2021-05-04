@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="install node.js &amp; express" />
+    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="install sequelize">
+      <change afterPath="$PROJECT_DIR$/connection.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1620044970134</updated>
       <workItem from="1620044971340" duration="9000" />
-      <workItem from="1620044987536" duration="39529000" />
+      <workItem from="1620044987536" duration="45774000" />
     </task>
     <task id="LOCAL-00001" summary="update project structure">
       <created>1620061914666</created>
@@ -147,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620128047693</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="install sequelize">
+      <created>1620128379671</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1620128379671</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +174,7 @@
     <MESSAGE value="update img styling on product details page" />
     <MESSAGE value="fix text decoration for safari (and others maybe)" />
     <MESSAGE value="install node.js &amp; express" />
-    <option name="LAST_COMMIT_MESSAGE" value="install node.js &amp; express" />
+    <MESSAGE value="install sequelize" />
+    <option name="LAST_COMMIT_MESSAGE" value="install sequelize" />
   </component>
 </project>
