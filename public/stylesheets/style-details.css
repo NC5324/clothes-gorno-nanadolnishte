@@ -228,6 +228,8 @@ button:hover {
 
     .details h1, .details h2 {
         text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     button {
