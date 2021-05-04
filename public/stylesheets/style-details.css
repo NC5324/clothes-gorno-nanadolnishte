@@ -60,7 +60,20 @@
 }
 
 .old-price {
-    text-decoration: line-through #D21117;
+    position: relative;
+    max-width: 180px;
+}
+
+.old-price::after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #D21117;
+    bottom: 13px;
+    left: 0;
+    z-index: 999;
 }
 
 .new-price {
@@ -171,11 +184,19 @@ button:hover {
 .item-old-price, .item-new-price {
     padding: 0 5px 0 0;
     font-size: 16px;
+    position: relative;
 }
 
-.item-old-price {
-    text-decoration: line-through #D21117;
-    text-decoration-thickness: 2px;
+.item-old-price::after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #D21117;
+    bottom: 8px;
+    left: 0;
+    z-index: 999;
 }
 
 .promotion {
