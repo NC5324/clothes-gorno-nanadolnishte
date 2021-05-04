@@ -6,15 +6,8 @@
     <title>Admin Panel</title>
     <link rel="icon" href="../assets/kocamanlar-icon1.png">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
-    <!-- FA Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-          crossorigin="anonymous" />
-
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../public/stylesheets/style-global.css">
     <style>
         * {
             margin: 0;
@@ -45,79 +38,43 @@
             display: flex;
             flex-direction: column;
 
-            border: 1px solid #D21117;
-
             min-height: 100vh;
-            padding: 50px;
         }
 
         .list {
-            height: 600px;
             border-radius: 5px;
-            border: 1px solid #8D8D8D;
 
-            padding: 10px 20px;
-        }
-
-        .nav {
             display: flex;
-
-            overflow-x: scroll;
-            overflow-y: hidden;
-            white-space: nowrap;
-            padding: 10px;
-            margin-bottom: 30px;
-
-            position: relative;
-        }
-        .nav-link {
-            font-size: 20px;
-            font-weight: 400;
-
-            padding: 10px;
-            margin-right: 10px;
-
-            cursor: pointer;
-            position: relative;
-
-            border-radius: 10px;
-        }
-
-        .nav-link:hover {
-            color: white;
-            background-color: #3D3D3D;
-        }
-
-        .selected {
-            color: white;
-            background-color: darkgreen;
+            flex-direction: column;
         }
 
         .filters {
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
+
+            margin-bottom: 10px;
         }
 
-        .filters > label[for="sorting"] {
-            margin: auto 10px auto auto;
+        .filters > label {
+            margin: auto 10px auto 10px;
         }
 
         .search {
             flex: 1 1 auto;
             display: flex;
+            margin-left: 10px;
         }
 
         .search input {
             flex: 1 1 auto;
-            padding: 10px;
+            padding: 10px 10px 10px 0;
             font-size: 16px;
 
             outline: 0;
             border: 1px solid #8D8D8D;
             border-left: none;
             border-radius: 0 5px 5px 0;
-            margin-right: 10px;
         }
 
         .filters select {
@@ -140,39 +97,252 @@
             border-radius: 5px 0 0 5px;
         }
 
+        @media screen and (max-width: 800px) {
 
+            .filters label[for="sorting"] {
+                margin-left: 0;
+            }
 
+            .filters > label {
+                margin-bottom: 5px;
+            }
+
+            .filters select {
+                flex-basis: 100%;
+                max-width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .search {
+                overflow-x: hidden;
+                margin-left: 0;
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        #customers {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td {
+            padding: 8px;
+            word-break: break-word;
+        }
+
+        #customers td span {
+            display: none;
+        }
+
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers tr:hover {
+            background-color: #ddd;
+            cursor: pointer;
+        }
+
+        #customers th {
+            padding: 12px 8px;
+            text-align: left;
+            background-color: #3D3D3D;
+            color: white;
+
+            font-weight: 400;
+        }
+
+        #customers th:first-child {
+            border-radius: 5px 0 0 0;
+        }
+
+        #customers th:last-child {
+            border-radius: 0 5px 0 0;
+        }
+
+        td.thumb {
+            max-width: 100px;
+        }
+
+        img {
+            max-width: 100%;
+            border: 2px solid white;
+        }
+
+        input[type="checkbox"] {
+            width: 30px;
+            height: 30px;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: #3D3D3D;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            /* Force table to not be like tables anymore */
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            /* Hide table headers (but not display: none;, for accessibility) */
+            th:not(:first-child) {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr {
+                border: 1px solid #ccc;
+            }
+
+            td:not(:first-of-type) {
+                /* Behave  like a "row" */
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+            }
+
+            td.thumb {
+                max-width: 100%;
+                display: flex;
+            }
+
+            .title, .category {
+                display: flex;
+                flex-flow: row wrap;
+            }
+
+            #customers td span {
+                display: inline-block;
+                margin-right: auto;
+                width: 50%;
+            }
+        }
     </style>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- FA Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" />
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../public/scripts/script-global.js"></script>
+    <script src="../public/scripts/script-admin-products.js"></script>
 </head>
 <body>
 <div class="container">
-    <article class="list">
+    <header class="header">
+        <img id="brand" src="../assets/brandLogo.png" alt="Brand Logo">
         <section class="nav">
-            <a class="nav-link selected">Всички</a>
-            <a class="nav-link">Холни гарнитури</a>
-            <a class="nav-link">Спални комплекти</a>
-            <a class="nav-link">Трапезарии</a>
-            <a class="nav-link">Дивани</a>
-            <a class="nav-link">Секции</a>
-            <a class="nav-link">Детски стаи</a>
         </section>
-        <section class="filters">
-            <div class="search">
-                <i class="fas fa-search"></i>
-                <input id="searchbar" placeholder="Въведи ключова дума...">
+    </header>
+    <main class="main-content">
+        <article class="list">
+            <section class="filters">
+                <label for="filtering">Филтрирай: </label>
+                <select id="filtering">
+                    <option selected>Всички</option>
+                    <option>Холни гарнитури</option>
+                    <option>Спални комплекти</option>
+                    <option>Трапезарии</option>
+                    <option>Дивани</option>
+                    <option>Секции</option>
+                    <option>Детски стаи</option>
+                </select>
+                <label for="sorting">Подреди по: </label>
+                <select id="sorting">
+                    <option selected>Подразбиране</option>
+                    <option>Най-нови</option>
+                    <option>Азбучен ред, А-Я</option>
+                    <option>Азбучен ред, Я-А</option>
+                    <option>Категория</option>
+                    <option>Брой посещения</option>
+                </select>
+                <div class="search">
+                    <i class="fas fa-search"></i>
+                    <input id="searchbar" placeholder="Въведи ключова дума...">
+                </div>
+            </section>
+            <section class="table" style="flex: 1 0 auto; margin-bottom: 10px">
+                <table id="customers">
+                    <thead>
+                    <tr>
+                        <th><input type="checkbox"></th>
+                        <th></th>
+                        <th>Продукт</th>
+                        <th>Категория</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="thumb"><img src="../assets/divan1.jpg" alt="sik"></td>
+                            <td class="title"><span>Продукт:</span>Холна гарнитура</td>
+                            <td class="category"><span>Категория:</span>Холни гарнитури</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="thumb"><img src="../assets/divan1.jpg" alt="sik"></td>
+                            <td class="title"><span>Продукт:</span>Холна гарнитура</td>
+                            <td class="category"><span>Категория:</span>Холни гарнитури</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="thumb"><img src="../assets/divan1.jpg" alt="sik"></td>
+                            <td class="title"><span>Продукт:</span>Холна гарнитура</td>
+                            <td class="category"><span>Категория:</span>Холни гарнитури</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="thumb"><img src="../assets/divan1.jpg" alt="sik"></td>
+                            <td class="title"><span>Продукт:</span>Холна гарнитура</td>
+                            <td class="category"><span>Категория:</span>Холни гарнитури</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="thumb"><img src="../assets/divan1.jpg" alt="sik"></td>
+                            <td class="title"><span>Продукт:</span>Холна гарнитура</td>
+                            <td class="category"><span>Категория:</span>Холни гарнитури</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <div style="height: 40px; display: flex; justify-content: center; cursor: pointer">
+                <div style="width: 40px; background-color: #3D3D3D; border-radius: 5px; display: flex; margin-right: 5px">
+                    <i class="fas fa-chevron-left" style="font-size: 16px;  color: white; margin: auto"></i>
+                </div>
+                <div style="width: 40px; background-color: #3D3D3D; border-radius: 5px; display: flex; margin-right: 5px"><span style="margin: auto; color: white; font-weight: 500">1</span></div>
+                <div style="width: 40px; background-color: #3D3D3D; border-radius: 5px; display: flex; margin-right: 5px"><span style="margin: auto; color: white; font-weight: 500">2</span></div>
+                <div style="width: 40px; background-color: #3D3D3D; border-radius: 5px; display: flex; margin-right: 5px"><span style="margin: auto; color: white; font-weight: 500">3</span></div>
+                <div style="width: 40px; background-color: #3D3D3D; border-radius: 5px; display: flex; margin-right: 5px"><span style="margin: auto; color: white; font-weight: 500">4</span></div>
+                <div style="width: 40px; background-color: #3D3D3D; border-radius: 5px; display: flex">
+                    <i class="fas fa-chevron-right" style="font-size: 16px; color: white; margin: auto"></i>
+                </div>
             </div>
-            <label for="sorting">Подреди по: </label>
-            <select id="sorting">
-                <option selected>Подразбиране</option>
-                <option>Най-нови</option>
-                <option>Азбучен ред, А-Я</option>
-                <option>Азбучен ред, Я-А</option>
-                <option>Цена, от ниска към висока</option>
-                <option>Цена, от висока към ниска</option>
-                <option>Отстъпка %</option>
-            </select>
-        </section>
-    </article>
+        </article>
+    </main>
+    <footer class="footer">
+        <div>
+            <section class="footer-section">
+                <h1>Администраторски панел</h1>
+                <a class="footer-nav-link" href="admin-products.html">Всички мебели</a>
+                <a class="footer-nav-link">Холни гарнитури</a>
+                <a class="footer-nav-link">Спални комплекти</a>
+                <a class="footer-nav-link">Трапезарии</a>
+                <a class="footer-nav-link">Детски стаи</a>
+                <a class="footer-nav-link">Дивани</a>
+                <a class="footer-nav-link">Легла</a>
+                <a class="footer-nav-link">Секции</a>
+            </section>
+        </div>
+        <span class="footer-text" style="margin: auto">Copyright © 2021, Мебели KOCAMANLAR</span>
+    </footer>
 </div>
 </body>
 </html>
