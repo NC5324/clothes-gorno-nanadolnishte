@@ -8,54 +8,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../public/stylesheets/style-global.css">
-    <link rel="stylesheet" href="../public/stylesheets/style-details.css">
-    <style>
-        button {
-            padding: 10px;
-            font-size: 16px;
-            outline: none;
-            border: none;
-            border-radius: 5px;
-            flex: 1 0 auto;
-            color: white;
-            cursor: pointer;
-            margin-bottom: 10px;
-        }
-        .submit {
-            background-color: forestgreen;
-            margin-right: 10px;
-        }
-
-        .cancel {
-            background-color: #D21117;
-        }
-
-        .submit:hover {
-            background-color: green;
-        }
-
-        .cancel:hover {
-            background-color: #ED1C24;
-        }
-
-        .old-price-container {
-            margin-right: 10px!important;
-        }
-
-        @media screen and(max-width: 800px) {
-            .old-price-container {
-                margin-right: 0!important;
-                flex-basis: 100%;
-
-                background-color: #ED1C24;
-            }
-        }
-
-        #file, #file-main {
-            cursor: pointer;
-        }
-
-    </style>
+    <link rel="stylesheet" href="../public/stylesheets/style-admin-product-details.css">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -80,50 +33,63 @@
     </header>
     <main class="main-content">
         <h1 style="padding: 20px 0">Редактиране на артикул</h1>
-        <article class="product-details">
-            <section class="images" style="width: 50%">
-                <div style="flex: 0 0 400px; margin-right: 10px; background-color: #8D8D8D; border-radius: 5px; display: flex; position: relative;">
-                    <input id="file-main" type="file" style="opacity: 0; position: absolute; width: 100%; height: 100%; outline: none;">
-                    <i class="fas fa-plus-circle" style="margin: auto; font-size: 30px; color: white;"></i>
-                </div>
-                <section class="secondary-images" style="display: flex">
-                    <div style="flex: 0 0 120px; height: 80px; margin-right: 10px; background-color: #8D8D8D; border-radius: 5px; display: flex; position: relative;">
-                        <input id="file" type="file" style="opacity: 0; position: absolute; width: 100%; height: 100%; outline: none;">
-                        <i class="fas fa-plus-circle" style="margin: auto; font-size: 30px; color: white;"></i>
-                    </div>
+        <section class="edit-product">
+            <section class="images">
+                <div id="main-image"></div>
+                <section id="secondary-images">
+                    <div class="secondary-image"></div>
+                    <div class="secondary-image"></div>
+                    <div class="secondary-image"></div>
+                    <div class="secondary-image"></div>
+                    <div class="secondary-image"></div>
                 </section>
             </section>
             <section class="details">
-                <label for="title" style="width: 100%; font-size: 18px">Заглавие:</label>
-                <input id="title" placeholder="Въведи име за продукта..." value="Холна гарнитура"
-                       style="padding: 10px; margin: 10px 0; font-size: 16px; border: 1px solid #8D8D8D; border-radius: 5px;  width: 100%; outline: none">
-                <div class="prices" style="display: flex; flex-flow: row wrap">
-                    <div class="old-price-container" style="flex: 1 0 auto; display: flex;  flex-direction: column; margin-bottom: 10px">
-                        <label for="old-price" style="font-size: 18px">Цена:</label>
-                        <input id="old-price" type="number" placeholder="Въведи цена..." value=2400 step="50"
-                               style="padding: 10px; font-size: 16px; border: 1px solid #8D8D8D; border-radius: 5px; outline: none">
+                <section class="input-field">
+                    <label for="in-title">Заглавие:</label>
+                    <input type="text" id="in-title" placeholder="Въведи заглавие">
+                </section>
+                <section class="shared-input-field">
+                    <article class="price-field">
+                        <label for="in-price">Цена:</label>
+                        <input id="in-price" type="number" step="50" min="0" placeholder="Въведи цена">
+                    </article>
+                    <article class="price-field">
+                        <label for="in-cmp-price">Цена за сравнение:</label>
+                        <input id="in-cmp-price" type="number" step="50" min="0" placeholder="Цена за сравнение">
+                    </article>
+                </section>
+                <section class="input-field">
+                    <label for="in-ctg">Категория:</label>
+                    <select id="in-ctg">
+                        <option selected disabled>Избери категория</option>
+                        <option>Холни гарнитури</option>
+                        <option>Спални комплекти</option>
+                        <option>Трапезарии</option>
+                        <option>Детски стаи</option>
+                        <option>Дивани</option>
+                        <option>Секции</option>
+                        <option>Холни маси</option>
+                        <option>Кухненски маси</option>
+                        <option>Кухненски столове</option>
+                        <option>Легла</option>
+                        <option>Гардероби</option>
+                    </select>
+                </section>
+                <section class="input-field">
+                    <label for="in-desc">Описание:</label>
+                    <textarea id="in-desc" placeholder="Въведи описание..."></textarea>
+                </section>
+                <section class="shared-input-field">
+                    <div class="button-wrapper">
+                        <button>Запази</button>
                     </div>
-                    <div style="flex: 1 0 auto; display: flex;  flex-direction: column">
-                        <label for="new-price" style="font-size: 18px">Цена за сравнение:</label>
-                        <input id="new-price" type="number" placeholder="Въведи цена..." value=2200 step="50"
-                               style="padding: 10px; font-size: 16px; border: 1px solid #8D8D8D; border-radius: 5px; outline: none">
+                    <div class="button-wrapper">
+                        <button>Откажи</button>
                     </div>
-                </div>
-                <div style="display: flex; flex-direction: column">
-                    <label for="description" style="font-size: 18px">Описание</label>
-                    <textarea id="description" placeholder="Въведи описание..."
-                              style="min-height: 200px; resize: vertical; border: 1px solid #8D8D8D; font-size: 16px; border-radius: 5px; padding: 10px; outline: none"></textarea>
-                </div>
-                <div style="display: flex; flex-flow: row wrap; margin-top: 10px">
-                    <button class="submit">
-                        Запази
-                    </button>
-                    <button class="cancel">
-                        Откажи
-                    </button>
-                </div>
+                </section>
             </section>
-        </article>
+        </section>
     </main>
     <footer class="footer">
         <div>

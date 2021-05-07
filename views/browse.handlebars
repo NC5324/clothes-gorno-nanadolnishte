@@ -1,0 +1,37 @@
+<section class="filters">
+    <h1>Холни гарнитури</h1>
+    <label for="filter-category">Филтрирай:</label>
+    <select id="filter-category">
+        <option selected disabled>Избери филтър...</option>
+    </select>
+
+    <label for="sorting">Сортирай по:</label>
+    <select id="sorting">
+        <option selected>Подразбиране</option>
+        <option>Най-нови</option>
+        <option>Азбучен ред, А-Я</option>
+        <option>Азбучен ред, Я-А</option>
+        <option>Цена, от ниска към висока</option>
+        <option>Цена, от висока към ниска</option>
+        <option>Отстъпка %</option>
+    </select>
+</section>
+<section class="browse">
+    {{#each furnitures}}
+        <article class="browse-item">
+            <img alt="Колекция №1" src="{{this.images.[0]}}">
+            <h2>{{this.title}}</h2>
+            <section class="price">
+                {{#if this.old_price}}
+                    <h3 class="old-price">{{this.old_price}} <span class="currency">лв.</span></h3>
+                {{/if}}
+                <h3 class="new-price">{{this.new_price}} <span class="currency">лв.</span></h3>
+            </section>
+            {{#if this.old_price}}
+                <section class="promotion">
+                    <span>- X%</span>
+                </section>
+            {{/if}}
+        </article>
+    {{/each}}
+</section>

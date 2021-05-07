@@ -1,0 +1,112 @@
+.edit-product {
+    display: flex;
+    flex-flow: row wrap;
+
+    margin-bottom: 30px;
+}
+
+.images {
+    flex: 1 0 auto;
+    max-width: 50%;
+    max-height: 600px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#main-image {
+    flex-basis: 400px;
+
+    margin-bottom: 20px;
+
+    border-radius: 5px;
+    background-color: #8D8D8D;
+}
+
+#secondary-images {
+    display: flex;
+
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.secondary-image {
+    min-width: 150px;
+    min-height: 100px;
+
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    border-radius: 5px;
+    background-color: #8D8D8D;
+}
+
+.details {
+    flex-basis: calc(50% - 20px);
+    margin-left: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 500;
+    font-size: 18px;
+
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+
+    outline: none;
+    border: 1px solid #8D8D8D;
+    border-radius: 5px;
+
+    font-size: 16px;
+}
+
+.shared-input-field {
+    display: flex;
+    flex-flow: row  wrap;
+}
+
+.input-field, .price-field, .button-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.price-field, .button-wrapper {
+    flex: 1 0 auto;
+}
+
+button {
+    padding: 10px;
+}
+
+textarea {
+    min-height: 200px;
+    resize: vertical;
+}
+
+@media screen and (max-width: 1000px) {
+    #main-image {
+        flex-basis: 300px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .images {
+        flex-basis: 100%;
+        max-width: 100%;
+
+        margin-bottom: 20px;
+    }
+
+    .details {
+        flex-basis: 100%;
+        margin-left: 0;
+    }
+}
