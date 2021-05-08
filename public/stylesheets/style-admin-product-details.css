@@ -14,13 +14,16 @@
     flex-direction: column;
 }
 
-#main-image {
+#image-0 {
     flex-basis: 400px;
 
     margin-bottom: 20px;
+    position: relative;
 
     border-radius: 5px;
     background-color: #8D8D8D;
+    background-position: center 100%;
+    background-size: cover;
 }
 
 #secondary-images {
@@ -31,14 +34,19 @@
 }
 
 .secondary-image {
+    max-width: 150px;
     min-width: 150px;
+    max-height: 100px;
     min-height: 100px;
 
     margin-right: 10px;
     margin-bottom: 10px;
+    position: relative;
 
     border-radius: 5px;
     background-color: #8D8D8D;
+    background-position: center 100%;
+    background-size: cover;
 }
 
 .details {
@@ -91,8 +99,83 @@ textarea {
     resize: vertical;
 }
 
+.in-file {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.image-action {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: rgba(255, 255, 255, 0.5);
+
+    color: #3D3D3D;
+}
+
+.opacity-100 {
+    opacity: 100%;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.image-action:hover {
+    opacity: 100%;
+}
+
+.image-action > i {
+    font-size: 30px;
+
+    margin: auto auto 5px auto;
+}
+
+.image-action > span {
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+
+    margin: 0 auto auto auto;
+}
+
+.ctg-add, .ctg-selected {
+    margin: 5px;
+    padding: 10px;
+
+    border-radius: 23px;
+    color: white;
+
+    position: relative;
+    cursor: pointer;
+}
+
+.ctg-add {
+    background: #D21117;
+}
+
+.ctg-add:hover {
+    background: #ED1C24;
+}
+
+.ctg-selected {
+    background: #3D3D3D;
+}
+
+.ctg-selected:hover {
+    background: #4B4B4B;
+}
+
 @media screen and (max-width: 1000px) {
-    #main-image {
+    #image-0 {
         flex-basis: 300px;
     }
 }

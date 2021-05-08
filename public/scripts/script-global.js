@@ -1,13 +1,9 @@
 $(document).ready(() => {
     $('#brand').on('click', () => {
-        if(window.location.pathname.includes('notIndex.html') || '/kocamanlar/'.includes(window.location.pathname)) {
-            window.location.href = './'
-        } else {
-            window.location.href = '../'
-        }
+        window.location.href = '/'
     })
 
-    $('.nav-link').add('.footer-nav-link').on('click', () => {
-        window.location.href = './browse'
+    $('.nav-link').add('.footer-nav-link').on('click', (ev) => {
+        window.location.href = `/browse/${ev.currentTarget.getAttribute('data-code')}`
     })
 })

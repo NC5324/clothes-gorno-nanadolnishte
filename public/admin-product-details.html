@@ -35,13 +35,21 @@
         <h1 style="padding: 20px 0">Редактиране на артикул</h1>
         <section class="edit-product">
             <section class="images">
-                <div id="main-image"></div>
+                <div id="image-0">
+                    <input class="in-file" type="file">
+                    <div class="image-action opacity-100">
+                        <i class="fas fa-images"></i>
+                        <span>Добави снимка</span>
+                    </div>
+                </div>
                 <section id="secondary-images">
-                    <div class="secondary-image"></div>
-                    <div class="secondary-image"></div>
-                    <div class="secondary-image"></div>
-                    <div class="secondary-image"></div>
-                    <div class="secondary-image"></div>
+                    <div id="image-1" class="secondary-image">
+                        <input class="in-file" type="file">
+                        <div class="image-action opacity-100">
+                            <i class="fas fa-images"></i>
+                            <span>Добави снимка</span>
+                        </div>
+                    </div>
                 </section>
             </section>
             <section class="details">
@@ -60,21 +68,67 @@
                     </article>
                 </section>
                 <section class="input-field">
-                    <label for="in-ctg">Категория:</label>
-                    <select id="in-ctg">
-                        <option selected disabled>Избери категория</option>
-                        <option>Холни гарнитури</option>
-                        <option>Спални комплекти</option>
-                        <option>Трапезарии</option>
-                        <option>Детски стаи</option>
-                        <option>Дивани</option>
-                        <option>Секции</option>
-                        <option>Холни маси</option>
-                        <option>Кухненски маси</option>
-                        <option>Кухненски столове</option>
-                        <option>Легла</option>
-                        <option>Гардероби</option>
-                    </select>
+                    <label>Избрани категории:</label>
+                    <section id="in-ctg-selected" class="shared-input-field">
+                    </section>
+                </section>
+
+                <section class="input-field">
+                    <label>Всички категории:</label>
+                    <section id="in-ctg-all" class="shared-input-field">
+                        <article class="ctg-add">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Холни гарнитури</span>
+                        </article>
+                        <article class="ctg-add">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Спални комплекти</span>
+                        </article>
+                        <article class="ctg-add">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Трапезарии</span>
+                        </article>
+                        <article class="ctg-add">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Детски стаи</span>
+                        </article>
+                        <article class="ctg-add">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Дивани</span>
+                        </article>
+                        <article class="ctg-add">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Ъглови дивани</span>
+                        </article>
+                        <article class="ctg-add">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Разтегателни дивани</span>
+                        </article>
+                        <article class="ctg-add">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Секции</span>
+                        </article>
+                        <article class="ctg-add">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Холни маси</span>
+                        </article>
+                        <article class="ctg-add">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Трапезни маси</span>
+                        </article>
+                        <article class="ctg-add">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Кухненски столове</span>
+                        </article>
+                        <article class="ctg-add">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Легла</span>
+                        </article>
+                        <article class="ctg-add">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Гардероби</span>
+                        </article>
+                    </section>
                 </section>
                 <section class="input-field">
                     <label for="in-desc">Описание:</label>
@@ -82,10 +136,10 @@
                 </section>
                 <section class="shared-input-field">
                     <div class="button-wrapper">
-                        <button>Запази</button>
+                        <button id="submit">Запази</button>
                     </div>
                     <div class="button-wrapper">
-                        <button>Откажи</button>
+                        <button id="cancel">Откажи</button>
                     </div>
                 </section>
             </section>
@@ -108,5 +162,14 @@
         <span class="footer-text" style="margin: auto">Copyright © 2021, Мебели KOCAMANLAR</span>
     </footer>
 </div>
+<template id="template-secondary-image">
+    <div class="secondary-image">
+        <input class="in-file" type="file">
+        <div class="image-action opacity-100">
+            <i class="fas fa-images"></i>
+            <span>Добави снимка</span>
+        </div>
+    </div>
+</template>
 </body>
 </html>
