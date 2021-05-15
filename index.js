@@ -30,21 +30,10 @@ app.get('/', (req, res) => {
 app.post('/api/admin/create', upload.array('foo'), (req, res) => {
     //convert from ([Object prototype null]{}) to {}
     const request = JSON.parse(JSON.stringify(req.body))
-
-    const images = []
-    req.files.forEach(file => {
-        const blob = storage.file(file.originalname);
-        const blobStream = blob.createWriteStream();
-
-        blobStream.on('finish', () => {
-
-        })
-        blobStream.end(file.buffer);
-    })
 })
 
 app.listen(3000, async() => {
     await syncModels()
     console.log(`\nServer running at port ${PORT}`)
-    console.log(`Homepage: http://localhost:${PORT}/`)
+    console.log(`Home page: http://localhost:${PORT}/`)
 })

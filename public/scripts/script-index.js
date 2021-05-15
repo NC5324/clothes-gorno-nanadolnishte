@@ -101,6 +101,6 @@ $(document).ready(() => {
     })
 
     $('.collections-item').on('click', () => {
-        window.location.href = './browse'
+        window.location.href = '/browse.html'
     })
 })
