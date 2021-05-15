@@ -22,6 +22,10 @@ const upload = multer({
     }
 })
 
+app.get('/', (req, res) => {
+    res.redirect('/index.html')
+})
+
 //POST route that creates new furniture
 app.post('/api/admin/create', upload.array('foo'), (req, res) => {
     //convert from ([Object prototype null]{}) to {}
@@ -42,5 +46,5 @@ app.post('/api/admin/create', upload.array('foo'), (req, res) => {
 app.listen(3000, async() => {
     await syncModels()
     console.log(`\nServer running at port ${PORT}`)
-    console.log(`Homepage: http://localhost:${PORT}/index.html`)
+    console.log(`Homepage: http://localhost:${PORT}/`)
 })
