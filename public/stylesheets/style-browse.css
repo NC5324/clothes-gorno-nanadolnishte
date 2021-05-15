@@ -46,6 +46,7 @@
 .browse-item > img {
     width: 100%;
     height: 150px;
+    background-color: #cccccc;
     border-radius: 2px;
 }
 
