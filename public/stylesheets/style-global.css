@@ -31,6 +31,47 @@
     flex-direction: column;
 }
 
+.headband-wrapper {
+    height: 50px;
+
+    background-color: #3D3D3D;
+    display: flex;
+}
+
+.headband-container {
+    flex: 1 0 auto;
+    max-width: 1280px;
+
+    display: flex;
+
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.headband-content {
+    flex: 1 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 0 10%;
+
+    color: white;
+}
+
+.headband-content > * {
+    flex: 1 1 auto;
+    font-size: 1.1em;
+}
+
+.headband-content > i {
+    display: none;
+}
+
+.align-right {
+    margin-left: auto;
+    text-align: right;
+}
+
 .header {
     min-height: 150px;
 
@@ -40,6 +81,8 @@
 
     padding: 0 10%;
     margin-bottom: 30px;
+
+    position: relative;
 }
 
 .main-content {
@@ -151,6 +194,16 @@ h2 {
 
 .footer-nav-link:hover {
     color: slategray;
+}
+
+@media screen and (max-width: 600px){
+    .something {
+        display: none;
+    }
+
+    .headband-content > i {
+        display: flex;
+    }
 }
 
 

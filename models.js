@@ -211,8 +211,12 @@ const options = {
     alter: true
 }
 
-function syncModels() {
-    db.sync(options)
+async function syncModels() {
+    try {
+        await db.sync()
+    } catch(err) {
+        console.log(err)
+    }
 }
 
 export { Furniture, Category, Image, Tag, FurnitureCategory, FurnitureImage, FurnitureTag, CategoryTag, syncModels }
