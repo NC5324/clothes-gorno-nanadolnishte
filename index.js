@@ -3,6 +3,7 @@ import cors from 'cors'
 import multer from 'multer'
 import { syncModels } from './models'
 import clothingController from './controllers/clothingController'
+import tagController from './controllers/tagController'
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -34,6 +35,7 @@ app.post('/api/admin/create', upload.array('foo'), (req, res) => {
 })
 
 app.use('/api/clothes', clothingController)
+app.use('/api/tags', tagController)
 
 app.listen(3000, async() => {
     await syncModels()
