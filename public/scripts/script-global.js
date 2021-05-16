@@ -13,7 +13,7 @@ function adjustNavLink(tag, linkVersion) {
     //Create a nav-link clone from a template and adjust its attributes according to server data
     const clone = document.getElementById('template-nav-link').content.cloneNode(true).querySelector('a')
     clone.textContent = tag.title
-    clone.setAttribute('data-id', tag.id)
+    clone.setAttribute('data-tag', JSON.stringify(tag))
 
     //Adjust styling for main navigation and footer navigation
     clone.classList.replace('nav-link', linkVersion)
@@ -41,7 +41,8 @@ $(document).ready(async() => {
     })
 
     $('.nav-link').add('.footer-nav-link').on('click', (ev) => {
-        localStorage.setItem('CATEGORY_ID', ev.currentTarget.getAttribute('data-id'))
+        const tag = ev.currentTarget.getAttribute('data-tag')
+        localStorage.setItem('NAV_CATEGORY', tag)
         window.location.href = `/browse.html`
     })
 })

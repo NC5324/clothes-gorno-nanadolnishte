@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="populate navigations according to server data">
+    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="fix title and footer text">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-product-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-product-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/browse.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/browse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/clothingController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/clothingController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/script-browse.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script-browse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/script-global.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script-global.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/style-details.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style-details.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +103,7 @@
       <workItem from="1621077412140" duration="17000" />
       <workItem from="1621109982111" duration="30000" />
       <workItem from="1621113187086" duration="6852000" />
-      <workItem from="1621123921107" duration="14483000" />
+      <workItem from="1621123921107" duration="20516000" />
     </task>
     <task id="LOCAL-00001" summary="update project structure">
       <created>1620061914666</created>
@@ -314,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621174528526</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fix title and footer text">
+      <created>1621175118600</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1621175118600</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,6 +360,7 @@
     <MESSAGE value="display selected item's details on the product details page" />
     <MESSAGE value="update styling" />
     <MESSAGE value="populate navigations according to server data" />
-    <option name="LAST_COMMIT_MESSAGE" value="populate navigations according to server data" />
+    <MESSAGE value="fix title and footer text" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix title and footer text" />
   </component>
 </project>

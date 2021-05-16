@@ -7,9 +7,39 @@ async function getAllClothes() {
     }
 }
 
+async function filterClothes(perPage, currentPage, categories) {
+    const request = {
+        perPage: perPage,
+        currentPage: currentPage,
+        categories: categories
+    }
+    try {
+        const response = await $.ajax(`${API_URL}/clothes/filter`, {
+            type: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            contentType: 'application/json',
+            data: JSON.stringify(request)
+        })
+        return Array.from(response.rows)
+    }
+    catch(err) {
+        console.log(err)
+    }
+}
+
 $(document).ready(async() => {
     //For each clothes data returned from the server append an item-card element to the browsing section
-    const clothes = await getAllClothes()
+    const selectedTags = []
+    selectedTags.push(JSON.parse(localStorage.getItem('NAV_CATEGORY')).id)
+    const clothes = await filterClothes(
+        10,
+        1,
+        selectedTags
+    )
+    document.querySelector('.filters h1').textContent = JSON.parse(localStorage.getItem('NAV_CATEGORY')).title
+
     clothes.forEach(clothing => {
         const clone = document.getElementById('template-item-card').content.cloneNode(true)
         //Add title of the clothing
@@ -36,6 +66,8 @@ $(document).ready(async() => {
         //Append item-card to the browse tab
         document.querySelector('.browse').appendChild(clone)
     })
+
+
 
     $('.browse-item').on('click', (ev) => {
         localStorage.setItem('PRODUCT_ID', ev.currentTarget.getAttribute('data-id'))
