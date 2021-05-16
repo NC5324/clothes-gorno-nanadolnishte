@@ -121,6 +121,14 @@
 .pagination-container {
     display: flex;
     margin-bottom: 10px;
+
+    background: white;
+
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
 }
 
 .pagination {
