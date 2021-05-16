@@ -67,11 +67,11 @@
                 <section class="shared-input-field">
                     <article class="price-field">
                         <label for="in-price">Цена:</label>
-                        <input id="in-price" type="number" step="50" min="0" placeholder="Въведи цена">
+                        <input id="in-price" type="number" step="5" min="0" placeholder="Въведи цена">
                     </article>
                     <article class="price-field">
                         <label for="in-cmp-price">Цена за сравнение:</label>
-                        <input id="in-cmp-price" type="number" step="50" min="0" placeholder="Цена за сравнение">
+                        <input id="in-cmp-price" type="number" step="5" min="0" placeholder="Цена за сравнение">
                     </article>
                 </section>
                 <section class="input-field">
@@ -83,58 +83,7 @@
                 <section class="input-field">
                     <label>Всички категории:</label>
                     <section id="in-ctg-all" class="shared-input-field">
-                        <article class="ctg-add">
-                            <i class="fas fa-plus-circle"></i>
-                            <span>Холни гарнитури</span>
-                        </article>
-                        <article class="ctg-add">
-                            <i class="fas fa-plus-circle"></i>
-                            <span>Спални комплекти</span>
-                        </article>
-                        <article class="ctg-add">
-                            <i class="fas fa-plus-circle"></i>
-                            <span>Трапезарии</span>
-                        </article>
-                        <article class="ctg-add">
-                            <i class="fas fa-plus-circle"></i>
-                            <span>Детски стаи</span>
-                        </article>
-                        <article class="ctg-add">
-                            <i class="fas fa-plus-circle"></i>
-                            <span>Дивани</span>
-                        </article>
-                        <article class="ctg-add">
-                            <i class="fas fa-plus-circle"></i>
-                            <span>Ъглови дивани</span>
-                        </article>
-                        <article class="ctg-add">
-                            <i class="fas fa-plus-circle"></i>
-                            <span>Разтегателни дивани</span>
-                        </article>
-                        <article class="ctg-add">
-                            <i class="fas fa-plus-circle"></i>
-                            <span>Секции</span>
-                        </article>
-                        <article class="ctg-add">
-                            <i class="fas fa-plus-circle"></i>
-                            <span>Холни маси</span>
-                        </article>
-                        <article class="ctg-add">
-                            <i class="fas fa-plus-circle"></i>
-                            <span>Трапезни маси</span>
-                        </article>
-                        <article class="ctg-add">
-                            <i class="fas fa-plus-circle"></i>
-                            <span>Кухненски столове</span>
-                        </article>
-                        <article class="ctg-add">
-                            <i class="fas fa-plus-circle"></i>
-                            <span>Легла</span>
-                        </article>
-                        <article class="ctg-add">
-                            <i class="fas fa-plus-circle"></i>
-                            <span>Гардероби</span>
-                        </article>
+                        <!-- To be populated with tags received from server -->
                     </section>
                 </section>
                 <section class="input-field">
@@ -173,6 +122,12 @@
 </template>
 <template id="template-nav-link">
     <a class="nav-link">Navigation title</a>
+</template>
+<template id="template-tag">
+    <article class="ctg-add">
+        <i class="fas fa-plus-circle"></i>
+        <span>Холни гарнитури</span>
+    </article>
 </template>
 </body>
 </html>

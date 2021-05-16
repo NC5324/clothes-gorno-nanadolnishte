@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="update footer text">
+    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="add pagination on browse tab">
+      <change afterPath="$PROJECT_DIR$/controllers/adminController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/eric.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root-path.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/browse.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/browse.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/script-browse.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script-browse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style-browse.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style-browse.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin-product-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-product-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/script-admin-product-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script-admin-product-details.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,12 +39,15 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1s1fMdVdvV0JewmqeGGv4dao37k" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -55,6 +61,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -101,7 +108,7 @@
       <workItem from="1621077412140" duration="17000" />
       <workItem from="1621109982111" duration="30000" />
       <workItem from="1621113187086" duration="6852000" />
-      <workItem from="1621123921107" duration="28770000" />
+      <workItem from="1621123921107" duration="35006000" />
     </task>
     <task id="LOCAL-00001" summary="update project structure">
       <created>1620061914666</created>
@@ -341,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621189152561</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="add pagination on browse tab">
+      <created>1621194873630</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1621194873630</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,6 +374,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="add browsing page&#10;add product details page" />
     <MESSAGE value="add product details page" />
     <MESSAGE value="update link styling" />
@@ -383,6 +398,7 @@
     <MESSAGE value="add filtering of products" />
     <MESSAGE value="update home page styling" />
     <MESSAGE value="update footer text" />
-    <option name="LAST_COMMIT_MESSAGE" value="update footer text" />
+    <MESSAGE value="add pagination on browse tab" />
+    <option name="LAST_COMMIT_MESSAGE" value="add pagination on browse tab" />
   </component>
 </project>

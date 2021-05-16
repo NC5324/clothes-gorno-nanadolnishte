@@ -1,6 +1,13 @@
-$(document).ready(() => {
-    const fileInput = $('.in-file')
+$(document).ready(async() => {
+    const tags = await getAllTags()
+    tags.forEach(tag => {
+        const clone = document.getElementById('template-tag').content.cloneNode(true)
+        clone.querySelector('span').textContent = tag.title
+        clone.querySelector('article').setAttribute('data-id', tag.id)
+        document.getElementById('in-ctg-all').appendChild(clone)
+    })
 
+    const fileInput = $('.in-file')
     let id = 1
     const files = {}
 
@@ -8,7 +15,7 @@ $(document).ready(() => {
 
     fileInput.on('change', (ev) => fileInputHandler(ev))
 
-    //submit for new product
+    //submit new product
     $('#submit').on('click', () => {
         const request = new FormData()
         const keys = Object.keys(files)
@@ -18,15 +25,15 @@ $(document).ready(() => {
         const categories = []
         const selectedTags = document.getElementById('in-ctg-selected').querySelectorAll('article')
         selectedTags.forEach(tag => {
-            categories.push(tag.getAttribute('data-code'))
+            categories.push(tag.getAttribute('data-id'))
         })
         request.append('categories', JSON.stringify(categories))
         request.append('title', document.getElementById('in-title').value)
         request.append('description', document.getElementById('in-desc').value)
-        request.append('cmp_price', document.getElementById('in-cmp-price').value)
+        request.append('price2', document.getElementById('in-cmp-price').value)
         request.append('price', document.getElementById('in-price').value)
         $.ajax({
-            url: 'http://localhost:3000/api/admin/create',
+            url: `${API_URL}/admin/create`,
             data: request,
             contentType: false,
             processData: false,

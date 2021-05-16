@@ -1,9 +1,9 @@
 import express from 'express'
 import cors from 'cors'
-import multer from 'multer'
 import { syncModels } from './models'
 import clothingController from './controllers/clothingController'
 import tagController from './controllers/tagController'
+import adminController from './controllers/adminController'
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -17,25 +17,13 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-const upload = multer({
-    storage: multer.memoryStorage(),
-    limits: {
-        fileSize: 5 * 1024 * 1024, // no larger than 5mb, you can change as needed.
-    }
-})
-
 app.get('/', (req, res) => {
     res.redirect('/index.html')
 })
 
-//POST route that creates new furniture
-app.post('/api/admin/create', upload.array('foo'), (req, res) => {
-    //convert from ([Object prototype null]{}) to {}
-    const request = JSON.parse(JSON.stringify(req.body))
-})
-
 app.use('/api/clothes', clothingController)
 app.use('/api/tags', tagController)
+app.use('/api/admin', adminController)
 
 app.listen(3000, async() => {
     await syncModels()
