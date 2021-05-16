@@ -42,6 +42,10 @@ $(document).ready(() => {
             //Add title of the clothing
             clone.querySelector('h2').textContent = clothing.title
 
+            //Adjust thumbnail
+            clone.querySelector('img')
+                .setAttribute('src', (clothing.Images.length > 0 ? clothing.Images[0].path : 'assets/placeholder.jpg'))
+
             //Add prices of the clothing
             //Display old price and discount only if there is a discount
             const discountCondition = clothing.price2 && (clothing.price < clothing.price2)
@@ -60,17 +64,26 @@ $(document).ready(() => {
             //Add data-id attribute that contains the ID of the clothing
             clone.querySelector('article').setAttribute('data-id', clothing.id)
 
+            //Add link to product details page
+            clone.querySelector('article').addEventListener('click', () => {
+                localStorage.setItem('PRODUCT_ID', clothing.id)
+                window.location.href = `/details.html`
+            })
+
             //Append item-card to the browse tab
             document.querySelector('.browse').appendChild(clone)
         })
 
         //Add pagination buttons and click event handlers to them
         if(!paginationSet) {
-            const pageCount = Math.ceil(Math.min(data.count, ev.detail.perPage) / data.count)
+            const pageCount = Math.ceil(data.totalCount / ev.detail.perPage)
             for(let i = 1; i<=pageCount; i++) {
                 const paginationBtn = document.createElement('div')
                 paginationBtn.setAttribute('class', 'pagination-btn')
                 paginationBtn.textContent = `${i}`
+
+                //add click event handler to the new pagination button
+                //and dispatch a filter event
                 paginationBtn.addEventListener('click', () => {
                     currentPage = i
                     document.dispatchEvent(new CustomEvent('filter', {
@@ -81,9 +94,12 @@ $(document).ready(() => {
                         }
                     }))
                 })
+
                 document.querySelector('.pagination-numbers').appendChild(paginationBtn)
             }
-            $('.pagination-btn:first-of-type').add('.pagination-btn:last-of-type').on('click', (ev) => {
+            //add click event handler to the left/right pagination buttons
+            //and dispatch a filter event
+            $('.pagination > .pagination-btn:first-of-type').add('.pagination > .pagination-btn:last-of-type').on('click', (ev) => {
                 const magicNumber = Number(ev.currentTarget.getAttribute('data-magic'))
                 document.dispatchEvent(new CustomEvent('filter', {
                     detail: {
@@ -106,9 +122,4 @@ $(document).ready(() => {
             selectedTags: selectedTags
         }
     }))
-
-    $('.browse-item').on('click', (ev) => {
-        localStorage.setItem('PRODUCT_ID', ev.currentTarget.getAttribute('data-id'))
-        window.location.href = `/details.html`
-    })
 })

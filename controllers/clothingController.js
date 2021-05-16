@@ -1,5 +1,5 @@
 import express from 'express'
-import { Clothing, Tag } from '../models'
+import { Clothing, Tag, Image } from '../models'
 import { Op } from 'sequelize'
 
 const router = express.Router()
@@ -31,7 +31,20 @@ router.get('/:id', async(request, response) => {
 router.post('/filter', async(request, response) => {
     try {
         const filterRequest = request.body
-        console.log(filterRequest)
+        const totalCount = await Clothing.count({
+            include: [{
+                model: Tag,
+                attributes: [],
+                through: {
+                    attributes: []
+                },
+                where: {
+                    id: {
+                        [Op.in]: filterRequest.categories
+                    }
+                }
+            }]
+        })
         const clothes = await Clothing.findAndCountAll({
             include: [{
                 model: Tag,
@@ -44,10 +57,17 @@ router.post('/filter', async(request, response) => {
                         [Op.in]: filterRequest.categories
                     }
                 }
+            }, {
+                model: Image,
+                attributes: ['path'],
+                through: {
+                    attributes: []
+                }
             }],
             limit: filterRequest.perPage,
             offset: (filterRequest.currentPage - 1) * filterRequest.perPage
         })
+        clothes.totalCount = totalCount
         response.status(200).json(clothes)
     } catch(err) {
         response.status(500)

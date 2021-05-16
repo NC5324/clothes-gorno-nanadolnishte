@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="add pagination on browse tab">
-      <change afterPath="$PROJECT_DIR$/controllers/adminController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/eric.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/root-path.js" afterDir="false" />
+    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="add new product creation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-product-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-product-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/script-admin-product-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script-admin-product-details.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/adminController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/adminController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/clothingController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/clothingController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/script-browse.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script-browse.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +105,7 @@
       <workItem from="1621077412140" duration="17000" />
       <workItem from="1621109982111" duration="30000" />
       <workItem from="1621113187086" duration="6852000" />
-      <workItem from="1621123921107" duration="35006000" />
+      <workItem from="1621123921107" duration="37781000" />
     </task>
     <task id="LOCAL-00001" summary="update project structure">
       <created>1620061914666</created>
@@ -355,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621194873630</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="add new product creation">
+      <created>1621201711168</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1621201711168</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,6 +403,7 @@
     <MESSAGE value="update home page styling" />
     <MESSAGE value="update footer text" />
     <MESSAGE value="add pagination on browse tab" />
-    <option name="LAST_COMMIT_MESSAGE" value="add pagination on browse tab" />
+    <MESSAGE value="add new product creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new product creation" />
   </component>
 </project>
