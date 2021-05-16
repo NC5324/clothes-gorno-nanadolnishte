@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize'
 import db from './connection.js'
 
-const Furniture = db.define('Furniture', {
+const Clothing = db.define('Clothing', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -14,31 +14,16 @@ const Furniture = db.define('Furniture', {
     description: {
         type: DataTypes.STRING
     },
-    old_price: {
+    price2: {
         type: DataTypes.REAL
     },
-    new_price: {
+    price: {
         type: DataTypes.REAL
     },
 }, {
-    tableName: 'furniture',
+    tableName: 'clothing',
     updatedAt: false,
     createdAt: true
-})
-
-const Category = db.define('Category', {
-    id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-        allowNull: false
-    },
-    title: {
-        type: DataTypes.STRING
-    }
-}, {
-    tableName: 'category',
-    timestamps: false
 })
 
 const Image = db.define('Image', {
@@ -63,10 +48,10 @@ const Tag = db.define('Tag', {
         autoIncrement: true,
         allowNull: false
     },
-    display_name: {
+    title: {
         type: DataTypes.STRING
     },
-    name: {
+    code: {
         type: DataTypes.STRING
     }
 }, {
@@ -74,49 +59,16 @@ const Tag = db.define('Tag', {
     timestamps: false
 })
 
-const FurnitureCategory = db.define('FurnitureCategory', {
-    FurnitureId: {
+const ClothingImage = db.define('ClothingImage', {
+    ClothingId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         references: {
-            model: Furniture,
+            model: Clothing,
             key: 'id'
         },
-        field: 'furniture_id'
-    },
-    CategoryId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        references: {
-            model: Category,
-            key: 'id'
-        },
-        field: 'category_id'
-    }
-}, {
-    tableName: 'furniture_category',
-    timestamps: false
-})
-
-Furniture.belongsToMany(Category, {
-    through: FurnitureCategory
-})
-Category.belongsToMany(Furniture, {
-    through: FurnitureCategory
-})
-
-const FurnitureImage = db.define('FurnitureImage', {
-    FurnitureId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        references: {
-            model: Furniture,
-            key: 'id'
-        },
-        field: 'furniture_id'
+        field: 'clothing_id'
     },
     ImageId: {
         type: DataTypes.INTEGER,
@@ -129,27 +81,27 @@ const FurnitureImage = db.define('FurnitureImage', {
         field: 'image_id'
     }
 }, {
-    tableName: 'furniture_image',
+    tableName: 'clothing_image',
     timestamps: false
 })
 
-Furniture.belongsToMany(Image, {
-    through: FurnitureImage
+Clothing.belongsToMany(Image, {
+    through: ClothingImage
 })
-Image.belongsToMany(Furniture, {
-    through: FurnitureImage
+Image.belongsToMany(Clothing, {
+    through: ClothingImage
 })
 
-const FurnitureTag = db.define('FurnitureTag', {
-    FurnitureId: {
+const ClothingTag = db.define('ClothingTag', {
+    ClothingId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         references: {
-            model: Furniture,
+            model: Clothing,
             key: 'id'
         },
-        field: 'furniture_id'
+        field: 'clothing_id'
     },
     TagId: {
         type: DataTypes.INTEGER,
@@ -162,54 +114,16 @@ const FurnitureTag = db.define('FurnitureTag', {
         field: 'tag_id'
     }
 }, {
-    tableName: 'furniture_tag',
+    tableName: 'clothing_tag',
     timestamps: false
 })
 
-Furniture.belongsToMany(Tag, {
-    through: FurnitureTag
+Clothing.belongsToMany(Tag, {
+    through: ClothingTag
 })
-Tag.belongsToMany(Furniture, {
-    through: FurnitureTag
+Tag.belongsToMany(Clothing, {
+    through: ClothingTag
 })
-
-const CategoryTag = db.define('CategoryTag', {
-    CategoryId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        references: {
-            model: Category,
-            key: 'id'
-        },
-        field: 'category_id'
-    },
-    TagId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        references: {
-            model: Tag,
-            key: 'id'
-        },
-        field: 'tag_id'
-    }
-}, {
-    tableName: 'category_tag',
-    timestamps: false
-})
-
-Category.belongsToMany(Tag, {
-    through: CategoryTag
-})
-Tag.belongsToMany(Category, {
-    through: CategoryTag
-})
-
-const options = {
-    force: true,
-    alter: true
-}
 
 async function syncModels() {
     try {
@@ -219,4 +133,4 @@ async function syncModels() {
     }
 }
 
-export { Furniture, Category, Image, Tag, FurnitureCategory, FurnitureImage, FurnitureTag, CategoryTag, syncModels }
+export { Clothing, Image, Tag, ClothingImage, ClothingTag, syncModels }

@@ -147,7 +147,6 @@ button:hover {
 }
 
 .browse-item {
-    flex-basis: 25%;
     -ms-flex: auto;
     position: relative;
     padding: 10px;
@@ -159,16 +158,17 @@ button:hover {
 }
 
 .browse-item > img {
-    width: 100%;
+    width: 250px;
     height: 150px;
-    background-color: #cccccc;
+    background-color: #dddddd;
     border-radius: 2px;
+    object-fit: contain;
+    margin-bottom: 10px;
 }
 
 .browse-item h2 {
     padding: 0;
     text-align: left;
-    height: 50px;
 }
 
 .browse-item::before {
@@ -196,7 +196,7 @@ button:hover {
 }
 
 .item-old-price, .item-new-price {
-    padding: 0 5px 0 0;
+    margin-right: 5px;
     font-size: 16px;
     position: relative;
 }

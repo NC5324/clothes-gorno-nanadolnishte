@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="fix">
+    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="update styling">
+      <change afterPath="$PROJECT_DIR$/public/assets/placeholder.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-product-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-product-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-products.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/models.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/browse.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/browse.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/script-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style-admin-product-details.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style-admin-product-details.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/style-browse.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style-browse.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/style-details.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style-details.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style-global.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style-global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style-index.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style-index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +67,7 @@
       <recent name="N:\WebstormProjects\kocamanlar" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="N:\WebstormProjects\kocamanlar\public\assets" />
       <recent name="N:\WebstormProjects\kocamanlar\public" />
       <recent name="N:\WebstormProjects\kocamanlar" />
       <recent name="N:\WebstormProjects\kocamanlar\public\stylesheets" />
@@ -108,7 +103,8 @@
       <workItem from="1621003488401" duration="29000" />
       <workItem from="1621077412140" duration="17000" />
       <workItem from="1621109982111" duration="30000" />
-      <workItem from="1621113187086" duration="6833000" />
+      <workItem from="1621113187086" duration="6852000" />
+      <workItem from="1621123921107" duration="4050000" />
     </task>
     <task id="LOCAL-00001" summary="update project structure">
       <created>1620061914666</created>
@@ -278,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621116879507</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="update styling">
+      <created>1621122796094</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1621122796094</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,8 +314,8 @@
     <MESSAGE value="upgrade product creation page&#10;update http endpoints&#10;minor style &amp; script updates on all pages" />
     <MESSAGE value="update project structure" />
     <MESSAGE value="fix paths" />
-    <MESSAGE value="update styling" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="update styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="update styling" />
   </component>
 </project>
