@@ -23,6 +23,12 @@ router.get('/:id', async(request, response) => {
                 through: {
                     attributes: []
                 }
+            }, {
+                model: Tag,
+                attributes: ['id'],
+                through: {
+                    attributes: []
+                }
             }],
             where: {
                 id: request.params.id

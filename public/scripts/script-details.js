@@ -4,7 +4,6 @@ $(document).ready(async() => {
 
     const images = document.querySelector('.images')
     images.querySelector('#image-0').style.backgroundImage = `url("${(clothing.Images.length > 0 ? clothing.Images[0].path : 'assets/placeholder.jpg')}")`
-    console.log(images)
 
     //Adjust details section
     const details = document.getElementById('template-details-section').content.cloneNode(true)
@@ -29,11 +28,41 @@ $(document).ready(async() => {
     //Add the adjusted details section to the main-content
     document.querySelector('.product-details').appendChild(details)
 
-    // //TODO: Add suggested items
-    // const suggested =
+    const suggested = await filterClothes(10, 1, [clothing.Tags[0].id])
+    suggested.rows.forEach(item => {
+        const clone = document.getElementById('template-suggestion').content.cloneNode(true)
+        //Add title of the item
+        clone.querySelector('article > h2').textContent = item.title
 
-    $('.browse-item').on('click', (ev) => {
-        localStorage.setItem('PRODUCT_ID', 102)
-        window.location.href = `/details.html`
+        //Adjust thumbnail
+        clone.querySelector('img')
+            .setAttribute('src', (item.Images.length > 0 ? item.Images[0].path : 'assets/placeholder.jpg'))
+
+        //Add prices of the item
+        //Display old price and discount only if there is a discount
+        const discountCondition = item.price2 && (item.price < item.price2)
+        const comparisonPrice = clone.querySelector('.item-price h2:first-of-type')
+        const discountTag = clone.querySelector('.promotion')
+        if(discountCondition) {
+            comparisonPrice.innerHTML = `${item.price2} <span class="currency">лв.</span>`
+            discountTag.querySelector('span').textContent = `-${100 - Math.floor(item.price / item.price2 * 100)}%`
+        } else {
+            comparisonPrice.style.display = 'none'
+            discountTag.style.display = 'none'
+        }
+        //Add price
+        clone.querySelector('.item-price h2:last-of-type').innerHTML = `${item.price} <span class="currency">лв.</span>`
+
+        //Add data-id attribute that contains the ID of the item
+        clone.querySelector('article').setAttribute('data-id', item.id)
+
+        //Add link to product details page
+        clone.querySelector('article').addEventListener('click', () => {
+            localStorage.setItem('PRODUCT_ID', item.id)
+            window.location.href = `/details.html`
+        })
+
+        //Append item-card to the browse tab
+        document.querySelector('.suggestions').appendChild(clone)
     })
 })
