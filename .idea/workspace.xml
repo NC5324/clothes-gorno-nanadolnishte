@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="make pagination sticky">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/clothingController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/clothingController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/script-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script-details.js" afterDir="false" />
+    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="add suggestions to details page">
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/style-details.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style-details.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +102,7 @@
       <workItem from="1621077412140" duration="17000" />
       <workItem from="1621109982111" duration="30000" />
       <workItem from="1621113187086" duration="6852000" />
-      <workItem from="1621123921107" duration="41872000" />
+      <workItem from="1621123921107" duration="41967000" />
     </task>
     <task id="LOCAL-00001" summary="update project structure">
       <created>1620061914666</created>
@@ -380,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621207589714</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="add suggestions to details page">
+      <created>1621208597793</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1621208597793</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,7 +404,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add suggestions section to product details page" />
     <MESSAGE value="update img styling on product details page" />
     <MESSAGE value="fix text decoration for safari (and others maybe)" />
     <MESSAGE value="install node.js &amp; express" />
@@ -425,6 +428,7 @@
     <MESSAGE value="make items in browse page display thumbnail&#10;fix link of items to details page&#10;fix pagination" />
     <MESSAGE value="make details page display main image&#10;move service functions to seperate file" />
     <MESSAGE value="make pagination sticky" />
-    <option name="LAST_COMMIT_MESSAGE" value="make pagination sticky" />
+    <MESSAGE value="add suggestions to details page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add suggestions to details page" />
   </component>
 </project>
