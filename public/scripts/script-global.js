@@ -1,14 +1,5 @@
 const API_URL = 'http://localhost:3000/api'
 
-async function getAllTags() {
-    try {
-        const response = await $.get(`${API_URL}/tags/all`)
-        return Array.from(response)
-    } catch(err) {
-        console.log(err.name)
-    }
-}
-
 function adjustNavLink(tag, linkVersion) {
     //Create a nav-link clone from a template and adjust its attributes according to server data
     const clone = document.getElementById('template-nav-link').content.cloneNode(true).querySelector('a')

@@ -1,16 +1,12 @@
-async function getClothingById(id) {
-    try {
-        let response = {}
-        response = await $.get(`${API_URL}/clothes/${id}`)
-        return response
-    } catch(err) {
-        console.log(err.name)
-    }
-}
-
 $(document).ready(async() => {
     const id = Number(localStorage.getItem('PRODUCT_ID'))
     const clothing = await getClothingById(id)
+
+    const images = document.querySelector('.images')
+    images.querySelector('#image-0').style.backgroundImage = `url("${(clothing.Images.length > 0 ? clothing.Images[0].path : 'assets/placeholder.jpg')}")`
+    console.log(images)
+
+    //Adjust details section
     const details = document.getElementById('template-details-section').content.cloneNode(true)
     //Add title of the clothing
     details.querySelector('h1').textContent = clothing.title
@@ -33,8 +29,11 @@ $(document).ready(async() => {
     //Add the adjusted details section to the main-content
     document.querySelector('.product-details').appendChild(details)
 
+    // //TODO: Add suggested items
+    // const suggested =
+
     $('.browse-item').on('click', (ev) => {
-        localStorage.setItem('PRODUCT_ID', ev.currentTarget.getAttribute('data-id'))
-        window.location.href = `/public/details.html}`
+        localStorage.setItem('PRODUCT_ID', 102)
+        window.location.href = `/details.html`
     })
 })

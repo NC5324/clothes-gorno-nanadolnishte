@@ -17,6 +17,13 @@ router.get('/all', async(request, response) => {
 router.get('/:id', async(request, response) => {
     try {
         const clothing = await Clothing.findOne({
+            include: [{
+                model: Image,
+                attributes: ['path'],
+                through: {
+                    attributes: []
+                }
+            }],
             where: {
                 id: request.params.id
             }

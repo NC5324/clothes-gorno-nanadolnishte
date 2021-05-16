@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="add new product creation">
+    <list default="true" id="477fb957-9106-4a15-95fd-85d84d8f08d0" name="Default Changelist" comment="make items in browse page display thumbnail&#10;fix link of items to details page&#10;fix pagination">
+      <change afterPath="$PROJECT_DIR$/public/scripts/service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/adminController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/adminController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/clothingController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/clothingController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/eric.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/browse.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/browse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/script-browse.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script-browse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/script-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script-details.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/script-global.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script-global.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/script-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/style-details.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style-details.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,11 +76,11 @@
       <recent name="N:\WebstormProjects\kocamanlar" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="N:\WebstormProjects\kocamanlar\public\scripts" />
       <recent name="N:\WebstormProjects\kocamanlar\public\assets" />
       <recent name="N:\WebstormProjects\kocamanlar\public" />
       <recent name="N:\WebstormProjects\kocamanlar" />
       <recent name="N:\WebstormProjects\kocamanlar\public\stylesheets" />
-      <recent name="N:\WebstormProjects\kocamanlar\public\scripts" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -105,7 +113,7 @@
       <workItem from="1621077412140" duration="17000" />
       <workItem from="1621109982111" duration="30000" />
       <workItem from="1621113187086" duration="6852000" />
-      <workItem from="1621123921107" duration="37781000" />
+      <workItem from="1621123921107" duration="40104000" />
     </task>
     <task id="LOCAL-00001" summary="update project structure">
       <created>1620061914666</created>
@@ -359,7 +367,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621201711168</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="make items in browse page display thumbnail&#10;fix link of items to details page&#10;fix pagination">
+      <created>1621204597236</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1621204597236</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,7 +394,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add browsing page&#10;add product details page" />
     <MESSAGE value="add product details page" />
     <MESSAGE value="update link styling" />
     <MESSAGE value="add suggestions section to product details page" />
@@ -404,6 +418,7 @@
     <MESSAGE value="update footer text" />
     <MESSAGE value="add pagination on browse tab" />
     <MESSAGE value="add new product creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="add new product creation" />
+    <MESSAGE value="make items in browse page display thumbnail&#10;fix link of items to details page&#10;fix pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="make items in browse page display thumbnail&#10;fix link of items to details page&#10;fix pagination" />
   </component>
 </project>

@@ -1,24 +1,3 @@
-async function filterClothes(perPage, currentPage, categories) {
-    const request = {
-        perPage: perPage,
-        currentPage: currentPage,
-        categories: categories
-    }
-    try {
-        return await $.ajax(`${API_URL}/clothes/filter`, {
-            type: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            contentType: 'application/json',
-            data: JSON.stringify(request)
-        })
-    }
-    catch(err) {
-        console.log(err)
-    }
-}
-
 $(document).ready(() => {
     const selectedTags = []
     selectedTags.push(JSON.parse(localStorage.getItem('NAV_CATEGORY')).id)

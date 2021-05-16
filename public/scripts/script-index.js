@@ -4,33 +4,6 @@ const slideDots = ['slide-1', 'slide-2', 'slide-3']
 let index = 0;
 let timer;
 
-let categories = [
-    {
-        title: 'Холни гарнитури',
-        thumbnail: './assets/divan3.jpg'
-    },
-    {
-        title: 'Спални комплекти',
-        thumbnail: './assets/spalnii.jpg'
-    },
-    {
-        title: 'Трапезарии',
-        thumbnail: './assets/trapezarii.jpg'
-    },
-    {
-        title: 'Детски стаи',
-        thumbnail: './assets/detski.jpg'
-    },
-    {
-        title: 'Дивани',
-        thumbnail: './assets/divani.jpg'
-    },
-    {
-        title: 'Секции',
-        thumbnail: './assets/sekcii.jpg'
-    }
-]
-
 function adjustSlideshow(index) {
     const text = $('.slide-content h1')[0]
     const dots = $('.i-dot')

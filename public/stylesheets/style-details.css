@@ -28,8 +28,9 @@
 
     border-radius: 5px;
     background-color: #dddddd;
-    background-position: center 100%;
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #secondary-images {
@@ -51,8 +52,7 @@
 
     border-radius: 5px;
     background-color: #dddddd;
-    background-position: center 100%;
-    background-size: cover;
+    background-size: contain;
 }
 
 .details {
