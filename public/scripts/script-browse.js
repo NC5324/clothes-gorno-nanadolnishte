@@ -22,7 +22,7 @@ $(document).ready(async() => {
         const discountTag = clone.querySelector('.promotion')
         if(discountCondition) {
             comparisonPrice.innerHTML = `${clothing.price2} <span class="currency">лв.</span>`
-            discountTag.querySelector('span').textContent = `- ${100 - Math.floor(clothing.price / clothing.price2 * 100)}%`
+            discountTag.querySelector('span').textContent = `-${100 - Math.floor(clothing.price / clothing.price2 * 100)}%`
         } else {
             comparisonPrice.style.display = 'none'
             discountTag.style.display = 'none'
