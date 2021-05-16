@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import multer from 'multer'
 import { syncModels } from './models'
+import clothingController from './controllers/clothingController'
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -31,6 +32,8 @@ app.post('/api/admin/create', upload.array('foo'), (req, res) => {
     //convert from ([Object prototype null]{}) to {}
     const request = JSON.parse(JSON.stringify(req.body))
 })
+
+app.use('/api/clothes', clothingController)
 
 app.listen(3000, async() => {
     await syncModels()
