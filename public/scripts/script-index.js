@@ -74,7 +74,7 @@ function slideToSpecific(target) {
     adjustSlideshow(index)
 }
 
-$(document).ready(() => {
+$(document).ready(async() => {
     timer = window.setInterval(slideToRight, 4000)
 
     adjustSlideshow(index)
@@ -93,14 +93,18 @@ $(document).ready(() => {
         slideToSpecific(ev.currentTarget)
     })
 
-    categories.forEach(x => {
-        const item = document.querySelector('#template-collection-item').content.cloneNode(true)
-        item.querySelector('img').setAttribute('src', x.thumbnail)
-        item.querySelector('h2').textContent = x.title
-        document.querySelector('.collections-content').appendChild(item)
+    const tags = await getAllTags()
+    tags.forEach(tag => {
+        const clone = document.getElementById('template-collection-item').content.cloneNode(true)
+        clone.querySelector('img').setAttribute('alt', tag.title)
+        clone.querySelector('h2').textContent = tag.title
+        clone.querySelector('.collections-item').setAttribute('data-tag', JSON.stringify(tag))
+        document.querySelector('.collections-content').appendChild(clone)
     })
 
-    $('.collections-item').on('click', () => {
-        window.location.href = '/browse.html'
+    $('.collections-item').on('click', (ev) => {
+        const tag = ev.currentTarget.getAttribute('data-tag')
+        localStorage.setItem('NAV_CATEGORY', tag)
+        window.location.href = `/browse.html`
     })
 })
