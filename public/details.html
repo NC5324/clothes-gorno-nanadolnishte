@@ -9,6 +9,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="stylesheets/style-global.css">
     <link rel="stylesheet" href="stylesheets/style-details.css">
+    <link rel="stylesheet" href="stylesheets/reviews.css">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -54,6 +55,17 @@
         <h2 style="padding: 0">Може да ви хареса също:</h2>
         <section class="suggestions">
             <!-- Filled with server data -->
+        </section>
+        <section class="reviews">
+            <header>
+                <h2 style="padding-left: 0; padding-right: 0">Ревюта</h2>
+                <button class="align-right">Добави ревю</button>
+            </header>
+            <main>
+                <div class="placeholder">
+                    Няма намерени ревюта за този продукт
+                </div>
+            </main>
         </section>
     </main>
     <footer class="footer">
@@ -153,6 +165,23 @@
 </template>
 <template id="template-nav-link">
     <a class="nav-link">Navigation title</a>
+</template>
+<template id="template-review">
+    <article class="review">
+        <section class="author">
+            <img alt="User avatar" src="assets/placeholder-pp.jpg" class="avatar">
+            <section class="author-details">
+                <span class="author-name">Наидджан Дурмуш</span>
+                <section class="rating">
+                </section>
+                <span class="timestamp">17.05.2021г.</span>
+            </section>
+        </section>
+        <span class="review-title">Title of review</span>
+        <p>Много добър продукт! Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. </p>
+    </article></template>
+<template id="template-star">
+    <i class="fas fa-star txt-lg" style="color: #FF9100"></i>
 </template>
 </body>
 </html>

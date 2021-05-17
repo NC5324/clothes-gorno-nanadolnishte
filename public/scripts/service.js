@@ -37,3 +37,14 @@ async function getAllTags() {
         console.log(err.name)
     }
 }
+
+async function getReviewsOfProduct(productId) {
+    try {
+        console.log(productId)
+        const response = await $.get(`${API_URL}/review/clothing/${productId}`)
+        console.log(response)
+        return Array.from(response)
+    } catch(err) {
+        console.log(err.name)
+    }
+}

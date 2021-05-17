@@ -114,11 +114,11 @@
     cursor: pointer;
 }
 
-button i {
+.btn-cart i {
     margin-right: 10px;
 }
 
-button:hover {
+.btn-cart:hover {
     background-color: #ED1C24;
 }
 

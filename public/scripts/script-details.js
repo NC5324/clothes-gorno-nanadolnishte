@@ -73,6 +73,28 @@ $(document).ready(async() => {
         document.querySelector('.suggestions').appendChild(clone)
     })
 
+    const reviews = await getReviewsOfProduct(id)
+    if(reviews.length > 0) {
+        document.querySelector('.reviews main').innerHTML = ''
+    }
+    for(const review of reviews) {
+        const clone = document.getElementById('template-review').content.cloneNode(true)
+        clone.querySelector('.review-title').textContent = review.title
+        for(let i=0; i<5; i++) {
+            clone.querySelector('.rating').innerHTML += (i < review.rating ?
+                '<i class="fas fa-star txt-lg" style="color: #FF9100"></i>\n':
+                '<i class="fas fa-star txt-lg" style="color: #dddddd"></i>\n'
+            )
+        }
+        clone.querySelector('.author-name').textContent = review.author
+        clone.querySelector('p').textContent = review.description
+
+        const postedOn = new Date(review.createdAt)
+        clone.querySelector('.timestamp').innerHTML = `${postedOn.toLocaleDateString()}&nbsp;@${postedOn.toLocaleTimeString()}`
+
+        document.querySelector('.reviews main').appendChild(clone)
+    }
+
     document.querySelector('.btn-cart').addEventListener('click', () => {
         const cart = localStorage.getItem('CART_ITEMS') ? JSON.parse(localStorage.getItem('CART_ITEMS')) : {}
         cart[`${id}`] = {
