@@ -1,4 +1,4 @@
-const slides = ['url("assets/slide1.jpg")', 'url("assets/slide2.png")', 'url("assets/slide3.png")']
+const slides = ['url("assets/placeholder.jpg")', 'url("assets/placeholder.jpg")', 'url("assets/placeholder.jpg")']
 const slideText = ['Безплатна доставка и монтаж', 'Доказано качество | 15+ години на пазара', 'Индивидуални поръчки по цветове и размери по ваш избор']
 const slideDots = ['slide-1', 'slide-2', 'slide-3']
 let index = 0;
@@ -18,8 +18,8 @@ function adjustSlideshow(index) {
         }
     }
     const slideshow = $('.slideshow')
-    slideshow.css('background', `${slides[index]} no-repeat center 100%`)
-    slideshow.css('background-size', 'cover')
+    slideshow.css('background', `${slides[index]} no-repeat center`)
+    slideshow.css('background-size', 'contain')
 
     clearInterval(timer)
     timer = window.setInterval(slideToRight, 4000)

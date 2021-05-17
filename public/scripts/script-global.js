@@ -97,4 +97,27 @@ $(document).ready(async() => {
     document.getElementById('exit-cart-button').addEventListener('click', () => {
         document.getElementById('cart').style.display = 'none'
     })
+
+    document.getElementById('submit-button').addEventListener('click', async() => {
+        const request = {}
+        request.sender = document.getElementById('in-name').value
+        request.address = document.getElementById('in-address').value
+        request.phone = document.getElementById('in-phone').value
+        request.price = Number(document.querySelector('.cart-content footer h3:last-of-type').textContent.split(' ')[0])
+
+        const products = []
+        const cartItems = JSON.parse(localStorage.getItem('CART_ITEMS'))
+        if(cartItems) {
+            const keys = Object.keys(cartItems)
+            keys.forEach(key => {
+                const cartItem = cartItems[key].item
+                products.push(cartItem.id)
+            })
+        }
+
+        request.products = products
+        await submitOrder(request)
+        localStorage.setItem('CART_ITEMS', JSON.stringify({}))
+        window.location.reload(false)
+    })
 })

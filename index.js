@@ -5,6 +5,7 @@ import clothingController from './controllers/clothingController'
 import tagController from './controllers/tagController'
 import adminController from './controllers/adminController'
 import reviewController from './controllers/reviewController'
+import orderController from './controllers/orderController'
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -26,6 +27,7 @@ app.use('/api/clothes', clothingController)
 app.use('/api/tags', tagController)
 app.use('/api/admin', adminController)
 app.use('/api/review', reviewController)
+app.use('/api/order', orderController)
 
 app.listen(3000, async() => {
     await syncModels()

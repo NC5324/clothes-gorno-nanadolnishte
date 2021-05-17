@@ -40,10 +40,23 @@ async function getAllTags() {
 
 async function getReviewsOfProduct(productId) {
     try {
-        console.log(productId)
         const response = await $.get(`${API_URL}/review/clothing/${productId}`)
-        console.log(response)
         return Array.from(response)
+    } catch(err) {
+        console.log(err.name)
+    }
+}
+
+async function submitOrder(orderRequest) {
+    try {
+        await $.ajax(`${API_URL}/order/create`, {
+            data: JSON.stringify(orderRequest),
+            contentType: 'application/json',
+            type: 'POST',
+            success: function() {
+                alert(`Благодарим ти за поръчката, ${orderRequest.sender}!`)
+            }
+        })
     } catch(err) {
         console.log(err.name)
     }

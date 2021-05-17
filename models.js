@@ -94,6 +94,44 @@ const Review = db.define('Review', {
 Clothing.hasMany(Review)
 Review.belongsTo(Clothing)
 
+const Order = db.define('Order', {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false
+    },
+    sender: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    address: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    phone: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    notes: {
+        type: DataTypes.STRING,
+    },
+    price: {
+        type: DataTypes.REAL,
+        allowNull: false,
+        defaultValue: 0
+    },
+    products: {
+        type: DataTypes.ARRAY(DataTypes.INTEGER),
+        allowNull: false,
+        defaultValue: []
+    }
+}, {
+    tableName: 'orders',
+    updatedAt: false,
+    createdAt: true
+})
+
 const ClothingImage = db.define('ClothingImage', {
     ClothingId: {
         type: DataTypes.INTEGER,
@@ -168,4 +206,4 @@ async function syncModels() {
     }
 }
 
-export { Clothing, Image, Tag, ClothingImage, ClothingTag, Review, syncModels }
+export { Clothing, Image, Tag, ClothingImage, ClothingTag, Review,  Order, syncModels }
