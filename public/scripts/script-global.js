@@ -14,6 +14,7 @@ function adjustNavLink(tag, linkVersion) {
 
 $(document).ready(async() => {
     //Add each tag returned from server to the navigation links
+
     const tags = await getAllTags()
     tags.forEach(tag => {
         //Get nav-link template and adjust display title and data-id attributes

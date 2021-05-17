@@ -61,7 +61,7 @@ router.post('/filter', async(request, response) => {
         const clothes = await Clothing.findAndCountAll({
             include: [{
                 model: Tag,
-                attributes: [],
+                attributes: ['id'],
                 through: {
                     attributes: []
                 },

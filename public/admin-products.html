@@ -97,6 +97,48 @@
             border-radius: 5px 0 0 5px;
         }
 
+        .pagination-container {
+            display: flex;
+            margin-bottom: 10px;
+
+            background: white;
+        }
+
+        .pagination {
+            margin: auto;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+
+        .pagination-numbers {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+
+        .pagination-btn {
+            width: 50px;
+            height: 50px;
+
+            margin: 5px;
+
+            border-radius: 5px;
+            background-color: #3D3D3D;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .pagination-btn:hover {
+            background-color: #4B4B4B;
+        }
+
         @media screen and (max-width: 800px) {
 
             .filters label[for="sorting"] {
@@ -233,6 +275,7 @@
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="scripts/service.js"></script>
     <script src="scripts/script-global.js"></script>
     <script src="scripts/script-admin-products.js"></script>
 </head>
@@ -289,50 +332,18 @@
                     </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td class="thumb"><img src="assets/divan1.jpg" alt="sik"></td>
-                            <td class="title"><span>Продукт:</span>Холна гарнитура</td>
-                            <td class="category"><span>Категория:</span>Холни гарнитури</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td class="thumb"><img src="assets/divan1.jpg" alt="sik"></td>
-                            <td class="title"><span>Продукт:</span>Холна гарнитура</td>
-                            <td class="category"><span>Категория:</span>Холни гарнитури</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td class="thumb"><img src="assets/divan1.jpg" alt="sik"></td>
-                            <td class="title"><span>Продукт:</span>Холна гарнитура</td>
-                            <td class="category"><span>Категория:</span>Холни гарнитури</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td class="thumb"><img src="assets/divan1.jpg" alt="sik"></td>
-                            <td class="title"><span>Продукт:</span>Холна гарнитура</td>
-                            <td class="category"><span>Категория:</span>Холни гарнитури</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td class="thumb"><img src="assets/divan1.jpg" alt="sik"></td>
-                            <td class="title"><span>Продукт:</span>Холна гарнитура</td>
-                            <td class="category"><span>Категория:</span>Холни гарнитури</td>
-                        </tr>
+                    <!-- populate with server data -->
                     </tbody>
                 </table>
             </section>
-            <div style="height: 40px; display: flex; justify-content: center; cursor: pointer; margin-bottom: 30px">
-                <div style="width: 40px; background-color: #3D3D3D; border-radius: 5px; display: flex; margin-right: 5px">
-                    <i class="fas fa-chevron-left" style="font-size: 16px;  color: white; margin: auto"></i>
-                </div>
-                <div style="width: 40px; background-color: #3D3D3D; border-radius: 5px; display: flex; margin-right: 5px"><span style="margin: auto; color: white; font-weight: 500">1</span></div>
-                <div style="width: 40px; background-color: #3D3D3D; border-radius: 5px; display: flex; margin-right: 5px"><span style="margin: auto; color: white; font-weight: 500">2</span></div>
-                <div style="width: 40px; background-color: #3D3D3D; border-radius: 5px; display: flex; margin-right: 5px"><span style="margin: auto; color: white; font-weight: 500">3</span></div>
-                <div style="width: 40px; background-color: #3D3D3D; border-radius: 5px; display: flex; margin-right: 5px"><span style="margin: auto; color: white; font-weight: 500">4</span></div>
-                <div style="width: 40px; background-color: #3D3D3D; border-radius: 5px; display: flex">
-                    <i class="fas fa-chevron-right" style="font-size: 16px; color: white; margin: auto"></i>
-                </div>
+            <div class="pagination-container">
+                <section class="pagination">
+                    <div class="pagination-btn" data-magic="-1"><</div>
+                    <div class="pagination-numbers">
+                        <!-- To be filled according to server data -->
+                    </div>
+                    <div class="pagination-btn" data-magic="1">></div>
+                </section>
             </div>
         </article>
     </main>
@@ -349,6 +360,14 @@
 </div>
 <template id="template-nav-link">
     <a class="nav-link">Navigation title</a>
+</template>
+<template id="template-item">
+    <tr>
+        <td><input type="checkbox"></td>
+        <td class="thumb"><img src="assets/placeholder.jpg" alt="TODO: put alt text"></td>
+        <td class="title"><span>Продукт:</span>Холна гарнитура</td>
+        <td class="category"><span>Категория:</span>Холни гарнитури</td>
+    </tr>
 </template>
 </body>
 </html>
