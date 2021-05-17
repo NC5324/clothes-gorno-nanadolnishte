@@ -1,0 +1,104 @@
+.reviews {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 400px;
+
+    margin-bottom: 30px;
+}
+
+.reviews header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    margin: 5px;
+}
+
+.reviews main {
+    flex: 1 0 auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.reviews .placeholder {
+    margin: auto;
+    text-align: center;
+    font-size: 40px;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+
+    margin: 5px;
+    padding: 10px 0;
+
+    background: white;
+}
+
+.author {
+    display: flex;
+    height: 60px;
+}
+
+.author > img {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+    object-position: center;
+
+    margin-right: 10px;
+
+    background: green;
+}
+
+.author-details {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.author-details .rating {
+    align-self: flex-start;
+}
+
+.author-details span {
+    font-size: 16px;
+}
+
+.author-name {
+    font-weight: 600;
+}
+
+.timestamp {
+    margin-top: auto;
+}
+
+.review-title {
+    padding: 10px 10px 10px 0;
+
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.reviews button {
+    padding: 10px;
+
+    outline: none;
+    border: 2px solid #FF9100;
+    background: #FF9100;
+    border-radius: 5px;
+
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.reviews button:hover {
+    background: #FFA024;
+}

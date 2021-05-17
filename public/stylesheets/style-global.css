@@ -217,7 +217,6 @@ h2 {
 
 .cart-content {
     max-width: 100vw;
-    max-height: 100vh;
     background: white;
 
     margin: auto;
@@ -306,7 +305,7 @@ h2 {
 }
 
 .cart-items main, .cart-order main {
-    flex: 1 0 auto;
+    flex: 1 1 500px;
     overflow-y: auto;
 }
 
@@ -317,9 +316,9 @@ h2 {
     padding: 5px;
 }
 
-.browse-item {
+.cart-items .browse-item {
     width: 100%;
-    height: 300px;
+    height: auto;
     -ms-flex: auto;
     position: relative;
 
@@ -330,7 +329,7 @@ h2 {
     flex-direction: column;
 }
 
-.browse-item > img {
+.cart-items .browse-item > img {
     width: 100%;
     height: 200px;
     background-color: #dddddd;
@@ -339,12 +338,12 @@ h2 {
     margin-bottom: 10px;
 }
 
-.browse-item h2 {
+.cart-items .browse-item h2 {
     padding: 0;
     text-align: left;
 }
 
-.browse-item::before {
+.cart-items .browse-item::before {
     display: block;
     content: "";
     position: absolute;
@@ -354,7 +353,7 @@ h2 {
     width: 100%;
 }
 
-.browse-item:hover::before {
+.cart-items .browse-item:hover::before {
     background: rgba(255, 255, 255, 0.1);
 }
 
