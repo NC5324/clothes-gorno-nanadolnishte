@@ -204,7 +204,7 @@ h2 {
 
 /*cart stuff*/
 #cart {
-    display: flex;
+    display: none;
     background: rgba(20,20,20,0.9);
 
     position: fixed;
