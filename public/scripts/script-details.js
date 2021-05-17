@@ -72,4 +72,13 @@ $(document).ready(async() => {
         //Append item-card to the browse tab
         document.querySelector('.suggestions').appendChild(clone)
     })
+
+    document.querySelector('.btn-cart').addEventListener('click', () => {
+        const cart = localStorage.getItem('CART_ITEMS') ? JSON.parse(localStorage.getItem('CART_ITEMS')) : {}
+        cart[`${id}`] = {
+            item: clothing,
+            count: Object.keys(cart).includes(`${id}`) ? cart[`${id}`].count + 1 : 1
+        }
+        localStorage.setItem('CART_ITEMS', JSON.stringify(cart))
+    })
 })

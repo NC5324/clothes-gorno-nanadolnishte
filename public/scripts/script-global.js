@@ -14,15 +14,6 @@ function adjustNavLink(tag, linkVersion) {
 
 $(document).ready(async() => {
     //Add each tag returned from server to the navigation links
-    const cartItems = JSON.parse(localStorage.getItem('CART_ITEMS'))
-    if(cartItems) {
-        cartItems.forEach(cartItem => {
-            const clone = document.getElementById('template-cart-item').content.cloneNode(true)
-
-            document.querySelector('.cart-items main').appendChild(clone)
-        })
-    }
-
     const tags = await getAllTags()
     tags.forEach(tag => {
         //Get nav-link template and adjust display title and data-id attributes
@@ -49,5 +40,52 @@ $(document).ready(async() => {
     document.getElementById('cart-button').addEventListener('click', () => {
         const cart = document.getElementById('cart')
         cart.style.display = (cart.style.display === 'flex' ? 'none' : 'flex')
+
+        const cartItems = JSON.parse(localStorage.getItem('CART_ITEMS'))
+        if(cartItems) {
+            document.querySelector('.cart-items main').innerHTML = ''
+            Object.keys(cartItems).forEach(key => {
+                const clothing = cartItems[key].item
+                const clone = document.getElementById('template-cart-item').content.cloneNode(true)
+                clone.querySelector('h2').textContent = clothing.title
+
+                //Adjust thumbnail
+                clone.querySelector('img')
+                    .setAttribute('src', (clothing.Images.length > 0 ? clothing.Images[0].path : 'assets/placeholder.jpg'))
+
+                //Add prices of the clothing
+                //Display old price and discount only if there is a discount
+                const discountCondition = clothing.price2 && (clothing.price < clothing.price2)
+                const comparisonPrice = clone.querySelector('h3:first-of-type')
+                const discountTag = clone.querySelector('.promotion')
+                if(discountCondition) {
+                    comparisonPrice.innerHTML = `${clothing.price2} <span class="currency">лв.</span>`
+                    discountTag.querySelector('span').textContent = `-${100 - Math.floor(clothing.price / clothing.price2 * 100)}%`
+                } else {
+                    comparisonPrice.style.display = 'none'
+                    discountTag.style.display = 'none'
+                }
+                //Add price
+                clone.querySelector('h3:last-of-type').innerHTML = `${clothing.price} <span class="currency">лв.</span>`
+
+                //Add data-id attribute that contains the ID of the clothing
+                clone.querySelector('article').setAttribute('data-id', clothing.id)
+
+                //Add link to product details page
+                clone.querySelector('article').addEventListener('click', () => {
+                    localStorage.setItem('PRODUCT_ID', clothing.id)
+                    window.location.href = `/details.html`
+                })
+
+                document.querySelector('.cart-items main').appendChild(clone)
+            })
+        }
+
+    })
+
+    document.getElementById('cart').addEventListener('click', (ev) => {
+        if(ev.target === ev.currentTarget) {
+            ev.currentTarget.style.display = 'none'
+        }
     })
 })
