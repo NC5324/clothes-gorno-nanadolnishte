@@ -103,6 +103,7 @@ $(document).ready(async() => {
         request.sender = document.getElementById('in-name').value
         request.address = document.getElementById('in-address').value
         request.phone = document.getElementById('in-phone').value
+        request.notes = document.getElementById('in-notes').value
         request.price = Number(document.querySelector('.cart-content footer h3:last-of-type').textContent.split(' ')[0])
 
         const products = []
