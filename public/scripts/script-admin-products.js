@@ -20,7 +20,8 @@ $(document).ready(async() => {
             clone.querySelector('.title').innerHTML = `<span>Продукт:</span>${clothing.title}`
             clone.querySelector('.category').innerHTML = `<span>В категория:</span>${tags.find(x => x.id === clothing.Tags[0].id).title}`
             clone.querySelector('img')
-                .setAttribute('src', (clothing.Images.length > 0 ? clothing.Images[0].path : 'assets/placeholder.jpg'))
+                .setAttribute('src',
+                    (clothing.Images.length > 0 ? clothing.Images[0].path : 'assets/placeholder.jpg'))
 
             document.querySelector('#customers tbody').appendChild(clone)
 

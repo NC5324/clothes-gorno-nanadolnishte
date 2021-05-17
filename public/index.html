@@ -31,7 +31,7 @@
         <main class="headband-content">
             <span class="something">Горещи летни промоции!</span>
             <i class="fas fa-bars"></i>
-            <span class="align-right">Количка</span>
+            <span id="cart-button" class="align-right">Количка</span>
         </main>
     </div>
 </section>
@@ -82,10 +82,63 @@
         <span class="footer-text" style="margin: auto">Copywight © 2021, OwO Depawtment</span>
     </footer>
 </div>
+<article id="cart">
+    <main class="cart-content">
+        <section class="cart-items">
+            <header>
+                <h2 style="padding-left: 0">Моята количка</h2>
+            </header>
+            <main>
+                <!-- Filled with items in cart -->
+            </main>
+            <footer>
+                <h3 style="padding-left: 0">Обща цена: </h3>
+            </footer>
+        </section>
+        <section class="cart-order">
+            <header>
+                <h2 style="padding-left: 0">Поръчай</h2>
+            </header>
+            <main>
+                <form id="order-form">
+                    <label for="in-name">Име: <span>*</span></label>
+                    <input id="in-name" placeholder="Въведи своето име..." required>
+                    <label for="in-address">Адрес: <span>*</span></label>
+                    <input id="in-address" placeholder="Въведи адрес..." required>
+                    <label for="in-phone">Телефон: <span>*</span></label>
+                    <input id="in-phone" placeholder="Въведи телефон..." required>
+                    <label for="in-notes">Бележки:</label>
+                    <textarea id="in-notes" placeholder="Добави бележки (макс. 255 символа)" maxlength="255"></textarea>
+                    <label>Полетата маркирани с <span>*</span> са задължителни!</label>
+                </form>
+            </main>
+            <footer>
+                <section class="buttons-container">
+                    <button type="submit" form="order-form">Изпрати</button>
+                    <button type="reset" form="order-form">Откажи</button>
+                </section>
+            </footer>
+        </section>
+    </main>
+</article>
+<!--Templates-->
 <template id="template-collection-item">
     <article class="collections-item">
         <img alt="Колекция" src="assets/placeholder.jpg">
         <h2>Колекция</h2>
+    </article>
+</template>
+<template id="template-cart-item">
+    <article class="browse-item">
+        <img alt="Placeholder alt text" src="assets/placeholder.jpg">
+        <h2>Name of clothing</h2>
+        <section class="price">
+            <h3 class="old-price">50 <span class="currency">лв.</span></h3>
+            <h3 class="new-price">45 <span class="currency">лв.</span></h3>
+        </section>
+        <section class="promotion">
+            <span>-10%</span>
+        </section>
     </article>
 </template>
 <template id="template-nav-link">

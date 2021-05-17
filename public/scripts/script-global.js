@@ -14,6 +14,14 @@ function adjustNavLink(tag, linkVersion) {
 
 $(document).ready(async() => {
     //Add each tag returned from server to the navigation links
+    const cartItems = JSON.parse(localStorage.getItem('CART_ITEMS'))
+    if(cartItems) {
+        cartItems.forEach(cartItem => {
+            const clone = document.getElementById('template-cart-item').content.cloneNode(true)
+
+            document.querySelector('.cart-items main').appendChild(clone)
+        })
+    }
 
     const tags = await getAllTags()
     tags.forEach(tag => {
@@ -36,5 +44,10 @@ $(document).ready(async() => {
         const tag = ev.currentTarget.getAttribute('data-tag')
         localStorage.setItem('NAV_CATEGORY', tag)
         window.location.href = `/browse.html`
+    })
+
+    document.getElementById('cart-button').addEventListener('click', () => {
+        const cart = document.getElementById('cart')
+        cart.style.display = (cart.style.display === 'flex' ? 'none' : 'flex')
     })
 })
