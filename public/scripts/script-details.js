@@ -4,6 +4,13 @@ $(document).ready(async() => {
 
     const images = document.querySelector('.images')
     images.querySelector('#image-0').style.backgroundImage = `url("${(clothing.Images.length > 0 ? clothing.Images[0].path : 'assets/placeholder.jpg')}")`
+    await clothing.Images.shift()
+    clothing.Images.forEach(image => {
+        const secondaryImg = document.createElement('div')
+        secondaryImg.setAttribute('class', 'secondary-image')
+        secondaryImg.style.backgroundImage = `url("${image.path}")`
+        document.getElementById('secondary-images').appendChild(secondaryImg)
+    })
 
     //Adjust details section
     const details = document.getElementById('template-details-section').content.cloneNode(true)

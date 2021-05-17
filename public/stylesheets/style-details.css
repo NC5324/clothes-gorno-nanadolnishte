@@ -53,6 +53,8 @@
     border-radius: 5px;
     background-color: #dddddd;
     background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .details {
