@@ -47,6 +47,18 @@ async function getReviewsOfProduct(productId) {
     }
 }
 
+async function submitReview(reviewRequest) {
+    try {
+        return await $.ajax(`${API_URL}/review/create`, {
+            data: JSON.stringify(reviewRequest),
+            contentType: 'application/json',
+            type: 'POST'
+        })
+    } catch(err) {
+        console.log(err.name)
+    }
+}
+
 async function submitOrder(orderRequest) {
     try {
         await $.ajax(`${API_URL}/order/create`, {

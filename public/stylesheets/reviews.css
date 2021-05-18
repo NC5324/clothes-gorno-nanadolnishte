@@ -102,3 +102,59 @@
 .reviews button:hover {
     background: #FFA024;
 }
+
+.add-review {
+    display: none;
+    flex-direction: column;
+}
+
+#review-form {
+    flex: 1 0 auto;
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 15px;
+}
+
+#review-form input, textarea {
+    padding: 10px;
+    font-size: 16px;
+
+    outline: none;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+
+    margin-bottom: 10px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+
+#review-form textarea {
+    resize: vertical;
+    min-height: 100px;
+    max-height: 300px;
+}
+
+#review-form label {
+    color: black;
+    font-size: 18px;
+}
+
+#review-form label > span {
+    color: #D21117;
+}
+
+.rating i {
+    font-size: 22px;
+    color: #dddddd;
+}
+
+.rating {
+    margin-bottom: 10px;
+}
+
+
+

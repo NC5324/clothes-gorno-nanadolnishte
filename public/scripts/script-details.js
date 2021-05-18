@@ -95,6 +95,57 @@ $(document).ready(async() => {
         document.querySelector('.reviews main').appendChild(clone)
     }
 
+    document.querySelector('.reviews header button').addEventListener('click', () => {
+        document.querySelector('.add-review').style.display = 'flex'
+    })
+
+    //rating hover effect
+    const stars = $('.rating i')
+    stars.on('mouseenter', (ev) => {
+        const index = Number(ev.currentTarget.getAttribute('data-index'))
+        if(reviewSet) {
+            reviewSet = false
+        }
+        for(let i = 0; i<index; i++) {
+            stars[i].style.color = '#FF9100'
+        }
+    })
+
+    let reviewSet = false
+    let review = 1
+    stars.on('click', (ev) => {
+        const index = Number(ev.currentTarget.getAttribute('data-index'))
+        review = index
+        for(let i = 0; i<5; i++) {
+            if(i < index)
+                stars[i].style.color = '#FF9100'
+            else
+                stars[i].style.color ='#dddddd'
+        }
+    reviewSet = true
+    })
+
+    stars.on('mouseleave', () => {
+        if(reviewSet)
+            return;
+
+        for(let i = review; i<5; i++) {
+            stars[i].style.color = '#dddddd'
+        }
+    })
+    //rating hover effect end
+
+    document.getElementById('submit-review-button').addEventListener('click', async() => {
+        const request = {}
+        request.title = document.getElementById('in-title').value
+        request.description = document.getElementById('in-description').value
+        request.rating = review
+        request.author = document.getElementById('in-author').value
+        request.clothingId = id
+
+        await submitReview(request)
+    })
+
     document.querySelector('.btn-cart').addEventListener('click', () => {
         const cart = localStorage.getItem('CART_ITEMS') ? JSON.parse(localStorage.getItem('CART_ITEMS')) : {}
         cart[`${id}`] = {

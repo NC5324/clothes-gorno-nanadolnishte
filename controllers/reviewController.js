@@ -7,7 +7,7 @@ router.post('/create', async(request, response) => {
     try {
         const newReview = await Review.create({
             title: request.body.title,
-            description: request.body.title,
+            description: request.body.description,
             rating: request.body.rating,
             author: request.body.author,
             ClothingId: request.body.clothingId

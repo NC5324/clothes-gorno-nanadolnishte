@@ -61,6 +61,28 @@
                 <h2 style="padding-left: 0; padding-right: 0">Ревюта</h2>
                 <button style="margin-left: auto">Добави ревю</button>
             </header>
+            <section class="add-review">
+                <form id="review-form">
+                    <label for="in-author">Име: <span>*</span></label>
+                    <input id="in-author" placeholder="Въведи своето име..." required>
+                    <section class="rating">
+                        <i class="fas fa-star" style="color: #FF9100" data-index="1"></i>
+                        <i class="fas fa-star" data-index="2"></i>
+                        <i class="fas fa-star" data-index="3"></i>
+                        <i class="fas fa-star" data-index="4"></i>
+                        <i class="fas fa-star" data-index="5"></i>
+                    </section>
+                    <label for="in-title">Заглавие: <span>*</span></label>
+                    <input id="in-title" placeholder="Въведи заглавие..." required>
+                    <label for="in-description">Описание:</label>
+                    <textarea id="in-description" placeholder="Напиши своето мнение за продукта (макс. 255 символа)" maxlength="255"></textarea>
+                    <label>Полетата маркирани с <span>*</span> са задължителни!</label>
+                    <section class="buttons-container">
+                        <button type="submit" id="submit-review-button">Изпрати</button>
+                        <button type="reset" form="review-form">Откажи</button>
+                    </section>
+                </form>
+            </section>
             <main>
                 <div class="placeholder">
                     Няма намерени ревюта за този продукт
