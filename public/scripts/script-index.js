@@ -1,5 +1,5 @@
 const slides = ['url("assets/placeholder.jpg")', 'url("assets/placeholder.jpg")', 'url("assets/placeholder.jpg")']
-const slideText = ['Безплатна доставка и монтаж', 'Доказано качество | 15+ години на пазара', 'Индивидуални поръчки по цветове и размери по ваш избор']
+const slideText = ['Lorem ipsum', 'Dolor sit amet', 'Je suis baguette']
 const slideDots = ['slide-1', 'slide-2', 'slide-3']
 let index = 0;
 let timer;

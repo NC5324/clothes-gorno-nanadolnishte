@@ -99,11 +99,12 @@
 }
 
 #brand {
-    max-width: 220px;
-    height: auto;
-
-    margin: 30px auto;
+    margin: auto; font-size: 100px; color: #D21117;
     cursor: pointer;
+}
+
+#brand:hover {
+    color: #ED1C24;
 }
 
 .nav {
@@ -440,6 +441,16 @@ h2 {
 
     .headband-content > i {
         display: flex;
+    }
+
+    #brand {
+        font-size: 80px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #brand {
+        font-size: 70px;
     }
 }
 
