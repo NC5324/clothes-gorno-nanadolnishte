@@ -7,7 +7,7 @@ $(document).ready(async() => {
     let paginationSet = false
 
     document.addEventListener('filter', async(ev) => {
-        document.querySelector('#customers tbody').innerHTML = ''
+        document.querySelector('#data tbody').innerHTML = ''
         //For each clothes data returned from the server append an item-card element to the browsing section
         const data = await filterClothes(
             ev.detail.perPage,
@@ -23,7 +23,7 @@ $(document).ready(async() => {
                 .setAttribute('src',
                     (clothing.Images.length > 0 ? clothing.Images[0].path : 'assets/placeholder.jpg'))
 
-            document.querySelector('#customers tbody').appendChild(clone)
+            document.querySelector('#data tbody').appendChild(clone)
 
             //Add pagination buttons and click event handlers to them
             if(!paginationSet) {
@@ -74,19 +74,4 @@ $(document).ready(async() => {
             selectedTags: selectedTags
         }
     }))
-
-    $('td').on('click', (e) => {
-        const checkboxes = $('input[type="checkbox"]')
-        if(Array.from(checkboxes).includes(e.target)){
-            return;
-        }
-        window.location.href = './admin-product-details.html'
-    })
-
-    $('th input[type="checkbox"]').on('click', () => {
-        const checkboxes = $('td input[type="checkbox"]')
-        Array.from(checkboxes).forEach(checkbox => {
-            checkbox.checked = !checkbox.checked;
-        })
-    })
 })
