@@ -15,7 +15,8 @@ const Clothing = db.define('Clothing', {
         type: DataTypes.STRING
     },
     price2: {
-        type: DataTypes.REAL
+        type: DataTypes.REAL,
+        defaultValue: 0
     },
     price: {
         type: DataTypes.REAL
@@ -51,7 +52,7 @@ const Tag = db.define('Tag', {
     title: {
         type: DataTypes.STRING
     },
-    code: {
+    imgPath: {
         type: DataTypes.STRING
     }
 }, {
@@ -200,7 +201,59 @@ Tag.belongsToMany(Clothing, {
 
 async function syncModels() {
     try {
-        await db.sync()
+        /*const defTags = [
+            {
+                id:1,
+                title:'Пуловери',
+                imgPath:'assets/blouse.jpg'
+            },
+            {
+                id:2,
+                title:'Ризи',
+                imgPath:'assets/shirt.jpg'
+            },
+            {
+                id:3,
+                title:'Тениски',
+                imgPath:'assets/tshirt.jpg'
+            },
+            {
+                id:4,
+                title:'Блузи',
+                imgPath:'assets/blouse.jpg'
+            },
+            {
+                id:5,
+                title:'Якета',
+                imgPath:'assets/jackets.jpg'
+            },
+            {
+                id:6,
+                title:'Палта',
+                imgPath:'assets/coats.jpg'
+            },
+            {
+                id:7,
+                title:'Дънки',
+                imgPath:'assets/jeans.jpg'
+            },
+            {
+                id:8,
+                title:'Шапки',
+                imgPath:'assets/hats.jpg'
+            },
+            {
+                id:9,
+                title:'Шалове',
+                imgPath:'assets/scarf.jpg'
+            }
+        ]
+        for(const tag of defTags) {
+            await Tag.create(tag)
+        }*/
+        await db.sync({
+            alter: true
+        })
     } catch(err) {
         console.log(err)
     }

@@ -106,9 +106,8 @@
 .collections-item > img {
     width: 100%;
     height: 200px;
-    background-color: #dddddd;
     border-radius: 2px;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .collections h2 {

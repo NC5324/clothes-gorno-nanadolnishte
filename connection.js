@@ -1,2 +1,2 @@
 const { Sequelize } = require('sequelize');
-export default new Sequelize('postgres://postgres:admin@localhost:5432/kocamanlar')
+export default new Sequelize('postgres://postgres:admin@localhost:5432/ncloth')

@@ -1,4 +1,4 @@
-const slides = ['url("assets/placeholder.jpg")', 'url("assets/placeholder.jpg")', 'url("assets/placeholder.jpg")']
+const slides = ['url("assets/slide1.jpg")', 'url("assets/slide2.jpg")', 'url("assets/slide3.jpg")']
 const slideText = ['Lorem ipsum', 'Dolor sit amet', 'Je suis baguette']
 const slideDots = ['slide-1', 'slide-2', 'slide-3']
 let index = 0;
@@ -19,7 +19,7 @@ function adjustSlideshow(index) {
     }
     const slideshow = $('.slideshow')
     slideshow.css('background', `${slides[index]} no-repeat center`)
-    slideshow.css('background-size', 'contain')
+    slideshow.css('background-size', 'cover')
 
     clearInterval(timer)
     timer = window.setInterval(slideToRight, 4000)
@@ -72,6 +72,8 @@ $(document).ready(async() => {
         clone.querySelector('img').setAttribute('alt', tag.title)
         clone.querySelector('h2').textContent = tag.title
         clone.querySelector('.collections-item').setAttribute('data-tag', JSON.stringify(tag))
+        clone.querySelector('img')
+            .setAttribute('src', (tag.imgPath ? tag.imgPath : 'assets/placeholder.jpg'))
         document.querySelector('.collections-content').appendChild(clone)
     })
 
