@@ -38,11 +38,19 @@
     <header class="header">
         <h1 id="brand">NCloth</h1>
         <section class="nav">
+            <a class="nav-link" href="index.html">Начало</a>
+            <a class="nav-link" href="admin-products.html">Продукти</a>
+            <a class="nav-link" href="admin-orders.html">Поръчки</a>
         </section>
     </header>
     <main class="main-content">
+        <article class="list">
+            <header>
+                <h2 style="padding-left: 0; padding-right: 0">Всики артикули</h2>
+                <button onclick="window.location.href='admin-product-details.html'">Създай нов артикул</button>
+            </header>
             <section class="table" style="flex: 1 0 auto; margin-bottom: 10px">
-                <table id="products">
+                <table id="data">
                     <thead>
                     <tr>
                         <th>Снимка</th>
@@ -72,7 +80,9 @@
         <div>
             <section class="footer-section">
                 <h1>Администраторски панел</h1>
-                <a class="footer-nav-link" href="admin-products.html">Всички артикули</a>
+                <a class="footer-nav-link" href="index.html">Начало</a>
+                <a class="footer-nav-link" href="admin-products.html">Продукти</a>
+                <a class="footer-nav-link" href="admin-orders.html">Поръчки</a>
                 <!-- To be populated with data from server -->
             </section>
         </div>

@@ -47,28 +47,28 @@
     background-color: #4B4B4B;
 }
 
-#products {
+#data {
     border-collapse: collapse;
     width: 100%;
 }
 
-#products td {
+#data td {
     padding: 8px;
     word-break: break-word;
 }
 
-#products td span {
+#data td span {
     display: none;
 }
 
-#products tr:nth-child(even){background-color: #f2f2f2;}
+#data tr:nth-child(even){background-color: #f2f2f2;}
 
-#products tr:hover {
+#data tr:hover {
     background-color: #ddd;
     cursor: pointer;
 }
 
-#products th {
+#data th {
     padding: 12px 8px;
     text-align: left;
     background-color: #3D3D3D;
@@ -77,11 +77,11 @@
     font-weight: 400;
 }
 
-#products th:first-child {
+#data th:first-child {
     border-radius: 5px 0 0 0;
 }
 
-#products th:last-child {
+#data th:last-child {
     border-radius: 0 5px 0 0;
 }
 
@@ -106,6 +106,34 @@ img {
     margin: 5px;
 }
 
+.list header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    margin: 10px;
+}
+
+.list header button {
+    padding: 10px;
+
+    outline: none;
+    border: 2px solid #1a4301;
+    background: #1a4301;
+    border-radius: 5px;
+
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.list header button:hover {
+    background: #245501;
+}
+
+
 @media screen and (max-width: 600px) {
 
     /* Force table to not be like tables anymore */
@@ -114,7 +142,7 @@ img {
     }
 
     /* Hide table headers (but not display: none;, for accessibility) */
-    th:not(:first-child) {
+    th {
         position: absolute;
         top: -9999px;
         left: -9999px;
@@ -137,12 +165,12 @@ img {
         display: flex;
     }
 
-    .title, .category {
+    .title, .category, .order-count, .id, address, .phone, .notes {
         display: flex;
         flex-flow: row wrap;
     }
 
-    #products td span {
+    #data td span {
         display: inline-block;
         margin-right: auto;
         width: 50%;

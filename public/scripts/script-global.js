@@ -14,28 +14,31 @@ function adjustNavLink(tag, linkVersion) {
 
 $(document).ready(async() => {
     //Add each tag returned from server to the navigation links
-    const tags = await getAllTags()
-    tags.forEach(tag => {
-        //Get nav-link template and adjust display title and data-id attributes
-        const clone = adjustNavLink(tag, 'nav-link')
+    const adminPaths = ['/admin-products.html', '/admin-orders.html', '/admin-product-details.html']
+    if(!adminPaths.includes(window.location.pathname)) {
+        const tags = await getAllTags()
+        tags.forEach(tag => {
+            //Get nav-link template and adjust display title and data-id attributes
+            const clone = adjustNavLink(tag, 'nav-link')
 
-        //Add the adjusted nav-link to the main navigation
-        document.querySelector('.nav').appendChild(clone)
+            //Add the adjusted nav-link to the main navigation
+            document.querySelector('.nav').appendChild(clone)
 
-        //Adjust the adjusted nav-link to the footer navigation
-        const clone2 = adjustNavLink(tag, 'footer-nav-link')
-        document.querySelector('.footer-section:first-of-type').appendChild(clone2)
-    })
+            //Adjust the adjusted nav-link to the footer navigation
+            const clone2 = adjustNavLink(tag, 'footer-nav-link')
+            document.querySelector('.footer-section:first-of-type').appendChild(clone2)
+        })
 
-    $('#brand').on('click', () => {
-        window.location.href = '/index.html'
-    })
+        $('#brand').on('click', () => {
+            window.location.href = '/index.html'
+        })
 
-    $('.nav-link').add('.footer-nav-link').on('click', (ev) => {
-        const tag = ev.currentTarget.getAttribute('data-tag')
-        localStorage.setItem('NAV_CATEGORY', tag)
-        window.location.href = `/browse.html`
-    })
+        $('.nav-link').add('.footer-nav-link').on('click', (ev) => {
+            const tag = ev.currentTarget.getAttribute('data-tag')
+            localStorage.setItem('NAV_CATEGORY', tag)
+            window.location.href = `/browse.html`
+        })
+    }
 
     const cartBtn = document.getElementById('cart-button')
     if(cartBtn) {
@@ -88,37 +91,40 @@ $(document).ready(async() => {
         })
     }
 
-    document.getElementById('cart').addEventListener('click', (ev) => {
-        if(ev.target === ev.currentTarget) {
-            ev.currentTarget.style.display = 'none'
-        }
-    })
+    const cart = document.getElementById('cart')
+    if(cart) {
+        cart.addEventListener('click', (ev) => {
+            if (ev.target === ev.currentTarget) {
+                ev.currentTarget.style.display = 'none'
+            }
+        })
 
-    document.getElementById('exit-cart-button').addEventListener('click', () => {
-        document.getElementById('cart').style.display = 'none'
-    })
+        document.getElementById('exit-cart-button').addEventListener('click', () => {
+            document.getElementById('cart').style.display = 'none'
+        })
 
-    document.getElementById('submit-button').addEventListener('click', async() => {
-        const request = {}
-        request.sender = document.getElementById('in-name').value
-        request.address = document.getElementById('in-address').value
-        request.phone = document.getElementById('in-phone').value
-        request.notes = document.getElementById('in-notes').value
-        request.price = Number(document.querySelector('.cart-content footer h3:last-of-type').textContent.split(' ')[0])
+        document.getElementById('submit-button').addEventListener('click', async () => {
+            const request = {}
+            request.sender = document.getElementById('in-name').value
+            request.address = document.getElementById('in-address').value
+            request.phone = document.getElementById('in-phone').value
+            request.notes = document.getElementById('in-notes').value
+            request.price = Number(document.querySelector('.cart-content footer h3:last-of-type').textContent.split(' ')[0])
 
-        const products = []
-        const cartItems = JSON.parse(localStorage.getItem('CART_ITEMS'))
-        if(cartItems) {
-            const keys = Object.keys(cartItems)
-            keys.forEach(key => {
-                const cartItem = cartItems[key].item
-                products.push(cartItem.id)
-            })
-        }
+            const products = []
+            const cartItems = JSON.parse(localStorage.getItem('CART_ITEMS'))
+            if (cartItems) {
+                const keys = Object.keys(cartItems)
+                keys.forEach(key => {
+                    const cartItem = cartItems[key].item
+                    products.push(cartItem.id)
+                })
+            }
 
-        request.products = products
-        await submitOrder(request)
-        localStorage.setItem('CART_ITEMS', JSON.stringify({}))
-        window.location.reload(false)
-    })
+            request.products = products
+            await submitOrder(request)
+            localStorage.setItem('CART_ITEMS', JSON.stringify({}))
+            window.location.reload(false)
+        })
+    }
 })

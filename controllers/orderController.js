@@ -3,8 +3,17 @@ import { Order } from '../models'
 
 const router = express.Router()
 
+router.get('/all', async(request, response) => {
+    try {
+        const orders = await Order.findAll()
+        response.status(200).json(orders)
+    } catch(err) {
+        response.status(500)
+        console.log(err)
+    }
+})
+
 router.post('/create', async(request, response) => {
-    console.log(request.body)
     try {
         const newOrder = await Order.create({
             sender: request.body.sender,

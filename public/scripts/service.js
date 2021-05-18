@@ -61,3 +61,12 @@ async function submitOrder(orderRequest) {
         console.log(err.name)
     }
 }
+
+async function getAllOrders() {
+    try {
+        const response = await $.get(`${API_URL}/order/all`)
+        return Array.from(response)
+    } catch(err) {
+        console.log(err.name)
+    }
+}

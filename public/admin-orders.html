@@ -8,261 +8,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="stylesheets/style-global.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-
-            font-family: "Roboto", "Helvetica", "Open Sans", "Arial", sans-serif;
-        }
-        ::-webkit-scrollbar {
-            width: 10px;
-            height: 10px;
-            background-color: #D6D6D6;
-        }
-
-        ::-webkit-scrollbar-button {
-            height: 0;
-            width: 0;
-        }
-
-        ::-webkit-scrollbar-thumb{
-            background-color: #3D3D3D;
-        }
-        .container {
-            max-width: 1280px;
-            margin-right: auto;
-            margin-left: auto;
-
-            display: flex;
-            flex-direction: column;
-
-            min-height: 100vh;
-        }
-
-        .list {
-            border-radius: 5px;
-
-            display: flex;
-            flex-direction: column;
-        }
-
-        .filters {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
-
-            margin-bottom: 10px;
-        }
-
-        .filters > label {
-            margin: auto 10px auto 10px;
-        }
-
-        .search {
-            flex: 1 1 auto;
-            display: flex;
-            margin-left: 10px;
-        }
-
-        .search input {
-            flex: 1 1 auto;
-            padding: 10px 10px 10px 0;
-            font-size: 16px;
-
-            outline: 0;
-            border: 1px solid #8D8D8D;
-            border-left: none;
-            border-radius: 0 5px 5px 0;
-        }
-
-        .filters select {
-            padding: 10px;
-            font-size: 16px;
-
-            outline: 0;
-            border: 1px solid #8D8D8D;
-            border-radius: 5px;
-            margin-left: auto;
-        }
-
-        .search i {
-            padding: 10px;
-            font-size: 16px;
-
-            outline: 0;
-            border: 1px solid #8D8D8D;
-            border-right: none;
-            border-radius: 5px 0 0 5px;
-        }
-
-        .pagination-container {
-            display: flex;
-            margin-bottom: 10px;
-
-            background: white;
-        }
-
-        .pagination {
-            margin: auto;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
-        }
-
-        .pagination-numbers {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
-        }
-
-        .pagination-btn {
-            width: 50px;
-            height: 50px;
-
-            margin: 5px;
-
-            border-radius: 5px;
-            background-color: #3D3D3D;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .pagination-btn:hover {
-            background-color: #4B4B4B;
-        }
-
-        @media screen and (max-width: 800px) {
-
-            .filters label[for="sorting"] {
-                margin-left: 0;
-            }
-
-            .filters > label {
-                margin-bottom: 5px;
-            }
-
-            .filters select {
-                flex-basis: 100%;
-                max-width: 100%;
-                margin-bottom: 10px;
-            }
-
-            .search {
-                overflow-x: hidden;
-                margin-left: 0;
-                flex-basis: 100%;
-                max-width: 100%;
-            }
-        }
-
-        #products {
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        #products td {
-            padding: 8px;
-            word-break: break-word;
-        }
-
-        #products td span {
-            display: none;
-        }
-
-        #products tr:nth-child(even){background-color: #f2f2f2;}
-
-        #products tr:hover {
-            background-color: #ddd;
-            cursor: pointer;
-        }
-
-        #products th {
-            padding: 12px 8px;
-            text-align: left;
-            background-color: #3D3D3D;
-            color: white;
-
-            font-weight: 400;
-        }
-
-        #products th:first-child {
-            border-radius: 5px 0 0 0;
-        }
-
-        #products th:last-child {
-            border-radius: 0 5px 0 0;
-        }
-
-        td.thumb {
-            max-width: 100px;
-        }
-
-        img {
-            max-width: 100%;
-            max-height: 200px;
-            border: 2px solid white;
-        }
-
-        input[type="checkbox"] {
-            width: 30px;
-            height: 30px;
-        }
-
-        input[type="checkbox"]:checked {
-            background-color: #3D3D3D;
-        }
-
-        @media screen and (max-width: 600px) {
-
-            /* Force table to not be like tables anymore */
-            table, thead, tbody, th, td, tr {
-                display: block;
-            }
-
-            /* Hide table headers (but not display: none;, for accessibility) */
-            th:not(:first-child) {
-                position: absolute;
-                top: -9999px;
-                left: -9999px;
-            }
-
-            tr {
-                border: 1px solid #ccc;
-            }
-
-            td:not(:first-of-type) {
-                /* Behave  like a "row" */
-                border: none;
-                border-bottom: 1px solid #eee;
-                position: relative;
-                padding-left: 50%;
-            }
-
-            td.thumb {
-                max-width: 100%;
-                display: flex;
-            }
-
-            .title, .category {
-                display: flex;
-                flex-flow: row wrap;
-            }
-
-            #products td span {
-                display: inline-block;
-                margin-right: auto;
-                width: 50%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="stylesheets/admin-products.css">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -277,7 +23,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="scripts/service.js"></script>
     <script src="scripts/script-global.js"></script>
-    <script src="scripts/script-admin-products.js"></script>
+    <script src="scripts/script-admin-orders.js"></script>
 </head>
 <body>
 <section class="headband-wrapper">
@@ -292,18 +38,26 @@
     <header class="header">
         <h1 id="brand">NCloth</h1>
         <section class="nav">
+            <a class="nav-link" href="index.html">Начало</a>
+            <a class="nav-link" href="admin-products.html">Продукти</a>
+            <a class="nav-link" href="admin-orders.html">Поръчки</a>
         </section>
     </header>
     <main class="main-content">
         <article class="list">
+            <header>
+                <h2 style="padding-left: 0; padding-right: 0">Всички поръчки</h2>
+            </header>
             <section class="table" style="flex: 1 0 auto; margin-bottom: 10px">
-                <table id="customers">
+                <table id="data">
                     <thead>
                     <tr>
-                        <th><input type="checkbox"></th>
-                        <th></th>
-                        <th>Продукт</th>
-                        <th>Категория</th>
+                        <th>ID</th>
+                        <th>Изпратена от</th>
+                        <th>Адрес</th>
+                        <th>Телефон</th>
+                        <th>Бележки</th>
+                        <th>Действия</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -326,8 +80,9 @@
         <div>
             <section class="footer-section">
                 <h1>Администраторски панел</h1>
-                <a class="footer-nav-link" href="admin-products.html">Всички артикули</a>
-                <!-- To be populated with data from server -->
+                <a class="footer-nav-link" href="index.html">Начало</a>
+                <a class="footer-nav-link" href="admin-products.html">Продукти</a>
+                <a class="footer-nav-link" href="admin-orders.html">Поръчки</a>
             </section>
         </div>
         <span class="footer-text" style="margin: auto">Copywight © 2021, OwO Depawtment</span>
@@ -338,10 +93,17 @@
 </template>
 <template id="template-item">
     <tr>
-        <td><input type="checkbox"></td>
-        <td class="thumb"><img src="assets/placeholder.jpg" alt="TODO: put alt text"></td>
-        <td class="title"><span>Продукт:</span>Холна гарнитура</td>
-        <td class="category"><span>Категория:</span>Холни гарнитури</td>
+        <td class="id"><span>ID:</span>Some data</td>
+        <td class="sender"><span>Изпратена от:</span>Some data</td>
+        <td class="address"><span>Адрес:</span>Some data</td>
+        <td class="phone"><span>Телефон:</span>Some data</td>
+        <td class="notes"><span>Бележки:</span>Some data</td>
+        <td class="actions">
+            <span>Действия:</span>
+            <section class="buttons">
+                <button>Изтрий</button>
+            </section>
+        </td>
     </tr>
 </template>
 </body>
