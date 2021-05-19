@@ -10,6 +10,13 @@ Easily modifiable online store. The theme is of a clothing store by default. No 
 - admin page for viewing/managing products
 - admin page for creating/editing a product
 
+## Used technologies
+
+- HTML, CSS, JavaScript
+- jQuery, AJAX
+- Node.js, Expres.js
+- PostgreSQL, Sequelize ORM
+
 ## Installation
 
 ```
