@@ -18,6 +18,15 @@ navigate to your project folder/connection.js and edit the sequelizze connection
 navigate to your project folder/models.js and uncomment the commented section in the function at the bottom
 ```
 
+## Running the application
+
+Open up a terminal in your project's root folder and run the following commands:
+
+```
+npm install
+npm start
+```
+
 ## Preview
 
 Desktop:
@@ -31,11 +40,10 @@ Desktop:
 ![Admin panel: products](https://github.com/NC5324/nc-clothes/blob/master/preview/admin.png "Admin panel: products")
 ![Admin panel: create or edit a product](https://github.com/NC5324/nc-clothes/blob/master/preview/create.png "Admin panel: create or edit a product")
 
-## Running the application
+Mobile:
 
-Open up a terminal in your project's root folder and run the following commands:
-
-```
-npm install
-npm start
-```
+![Home page](https://github.com/NC5324/nc-clothes/blob/master/preview/m-index.png "Home page")
+![Product browsing page](https://github.com/NC5324/nc-clothes/blob/master/preview/m-browse.png "Browsing page")
+![Product details page](https://github.com/NC5324/nc-clothes/blob/master/preview/m-details.png "Product details page")
+![Shopping cart](https://github.com/NC5324/nc-clothes/blob/master/preview/m-cart.png "Shopping cart")
+![Admin panel: products](https://github.com/NC5324/nc-clothes/blob/master/preview/m-admin.png "Admin panel: products")
