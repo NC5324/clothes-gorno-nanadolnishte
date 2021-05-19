@@ -20,6 +20,16 @@ navigate to your project folder/models.js and uncomment the commented section in
 
 ## Preview
 
+Desktop:
+
+![Home page](https://github.com/NC5324/nc-clothes/blob/master/preview/index.png "Home page")
+![Home page](https://github.com/NC5324/nc-clothes/blob/master/preview/index2.png "Home page")
+![Product details page](https://github.com/NC5324/nc-clothes/blob/master/preview/details.png "Product details page")
+![Product reviews](https://github.com/NC5324/nc-clothes/blob/master/preview/reviews.png "Product reviews")
+![New review form](https://github.com/NC5324/nc-clothes/blob/master/preview/reviews2.png "New review form")
+![Shopping cart](https://github.com/NC5324/nc-clothes/blob/master/preview/cart.png "Shopping cart")
+![Admin panel: products](https://github.com/NC5324/nc-clothes/blob/master/preview/admin.png "Admin panel: products")
+![Admin panel: create or edit a product](https://github.com/NC5324/nc-clothes/blob/master/preview/create.png "Admin panel: create or edit a product")
 
 ## Running the application
 
