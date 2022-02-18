@@ -1,7 +1,6 @@
 # NCloth
-> Insert generic marketing slogan
 
-Easily modifiable online store. The theme is of a clothing store by default. No security implemented. Includes:
+Easily modifiable online store. The theme is of a clothing store by default. Includes:
 - an index page
 - browsing page with pagination
 - product details page with reviews
